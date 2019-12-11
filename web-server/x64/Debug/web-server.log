@@ -1,0 +1,17 @@
+﻿  C:\Users\Jonathan\source\repos\cpp-webserver\web-server
+  C:\Users\Jonathan\source\repos\cpp-webserver\html
+  base64.cpp
+C:\Users\Jonathan\source\repos\cpp-webserver\web-server\base64\base64.cpp(88,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jonathan\source\repos\cpp-webserver\web-server\base64\base64.cpp(99,61): warning C4267: '=': conversion from 'size_t' to 'unsigned char', possible loss of data
+C:\Users\Jonathan\source\repos\cpp-webserver\web-server\base64\base64.cpp(113,59): warning C4267: '=': conversion from 'size_t' to 'unsigned char', possible loss of data
+  main.cpp
+  Socket.cpp
+C:\Users\Jonathan\source\repos\cpp-webserver\web-server\socket\src\Socket.cpp(153,33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jonathan\source\repos\cpp-webserver\web-server\socket\src\Socket.cpp(157,33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  stdHelpers.cpp
+  UrlHelper.cpp
+  webserver.cpp
+C:\Users\Jonathan\source\repos\cpp-webserver\web-server\webserver.cpp(85,60): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Jonathan\source\repos\cpp-webserver\web-server\webserver.cpp(95,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  web-server.vcxproj -> C:\Users\Jonathan\source\repos\cpp-webserver\x64\Debug\web-server.exe

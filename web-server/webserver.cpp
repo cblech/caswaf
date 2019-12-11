@@ -36,9 +36,9 @@
 
 
 #include "webserver.h"
-#include "socket.h"
+#include "socket/src/Socket.h"
 #include "UrlHelper.h"
-#include "base64.h"
+#include "base64/base64.h"
 
 webserver::request_func webserver::request_func_=0;
 
