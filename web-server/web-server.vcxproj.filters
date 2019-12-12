@@ -13,45 +13,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\connection">
+      <UniqueIdentifier>{d85e05f1-584b-4b8b-82e9-aa9c4f8cf080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\connection">
+      <UniqueIdentifier>{8980d959-c2f2-4206-a88f-59b7979fc409}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="webserver.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="stdHelpers.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="UrlHelper.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="base64\base64.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\connection</Filter>
     </ClCompile>
     <ClCompile Include="socket\src\Socket.cpp">
+      <Filter>Quelldateien\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="stdHelpers.cpp">
+      <Filter>Quelldateien\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="UrlHelper.cpp">
+      <Filter>Quelldateien\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="webserver.cpp">
+      <Filter>Quelldateien\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="WebPathHandler.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdHelpers.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Tracer.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="UrlHelper.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="base64\base64.h">
+      <Filter>Headerdateien\connection</Filter>
     </ClInclude>
     <ClInclude Include="webserver.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\connection</Filter>
     </ClInclude>
-    <ClInclude Include="base64\base64.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="UrlHelper.h">
+      <Filter>Headerdateien\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracer.h">
+      <Filter>Headerdateien\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="stdHelpers.h">
+      <Filter>Headerdateien\connection</Filter>
     </ClInclude>
     <ClInclude Include="socket\src\Socket.h">
+      <Filter>Headerdateien\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="WebPathHandler.h">
       <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="casTypes.h">
+      <Filter>Quelldateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
