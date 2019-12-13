@@ -19,54 +19,114 @@
     <Filter Include="Quelldateien\connection">
       <UniqueIdentifier>{8980d959-c2f2-4206-a88f-59b7979fc409}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\engine">
+      <UniqueIdentifier>{048ed671-6c74-4773-b79e-69399214f4ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\engine">
+      <UniqueIdentifier>{fd292598-8d73-4d4f-94a8-7f898a670c4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\website">
+      <UniqueIdentifier>{b0405ec0-6cb1-441b-8ffe-0372ff6b6b61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\website">
+      <UniqueIdentifier>{fb6580c2-dd8a-40df-aa3c-94178e79f81e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\website\controller">
+      <UniqueIdentifier>{46cfb732-2c7f-4e31-b80a-3fd2a3f6e830}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\website\controller">
+      <UniqueIdentifier>{359a99b4-b7c1-44a3-a826-6d78bec905f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\engine\test">
+      <UniqueIdentifier>{2f4cdaca-590f-4f0d-a45f-daf60feaa7a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="base64\base64.cpp">
       <Filter>Quelldateien\connection</Filter>
     </ClCompile>
     <ClCompile Include="socket\src\Socket.cpp">
       <Filter>Quelldateien\connection</Filter>
     </ClCompile>
-    <ClCompile Include="stdHelpers.cpp">
-      <Filter>Quelldateien\connection</Filter>
-    </ClCompile>
     <ClCompile Include="UrlHelper.cpp">
       <Filter>Quelldateien\connection</Filter>
     </ClCompile>
-    <ClCompile Include="webserver.cpp">
+    <ClCompile Include="stdHelpers.cpp">
       <Filter>Quelldateien\connection</Filter>
     </ClCompile>
-    <ClCompile Include="WebPathHandler.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Route.cpp">
+      <Filter>Quelldateien\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="RoutingEngine.cpp">
+      <Filter>Quelldateien\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Quelldateien\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="RootController.cpp">
+      <Filter>Quelldateien\website\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Routing.cpp">
+      <Filter>Quelldateien\website</Filter>
+    </ClCompile>
+    <ClCompile Include="webserver.cpp">
+      <Filter>Quelldateien\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Error404Controller.cpp">
+      <Filter>Quelldateien\website\controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base64\base64.h">
       <Filter>Headerdateien\connection</Filter>
     </ClInclude>
-    <ClInclude Include="webserver.h">
+    <ClInclude Include="casTypes.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="RootController.h">
+      <Filter>Headerdateien\website\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Route.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Routing.h">
+      <Filter>Headerdateien\website</Filter>
+    </ClInclude>
+    <ClInclude Include="RoutingEngine.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="socket\src\Socket.h">
       <Filter>Headerdateien\connection</Filter>
     </ClInclude>
-    <ClInclude Include="UrlHelper.h">
+    <ClInclude Include="starStringEquals.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="starStringEqualsTest.h">
+      <Filter>Headerdateien\engine\test</Filter>
+    </ClInclude>
+    <ClInclude Include="stdHelpers.h">
       <Filter>Headerdateien\connection</Filter>
     </ClInclude>
     <ClInclude Include="Tracer.h">
       <Filter>Headerdateien\connection</Filter>
     </ClInclude>
-    <ClInclude Include="stdHelpers.h">
+    <ClInclude Include="UrlHelper.h">
       <Filter>Headerdateien\connection</Filter>
     </ClInclude>
-    <ClInclude Include="socket\src\Socket.h">
-      <Filter>Headerdateien\connection</Filter>
+    <ClInclude Include="webserver.h">
+      <Filter>Headerdateien\engine</Filter>
     </ClInclude>
-    <ClInclude Include="WebPathHandler.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Error404Controller.h">
+      <Filter>Headerdateien\website\controller</Filter>
     </ClInclude>
-    <ClInclude Include="casTypes.h">
-      <Filter>Quelldateien</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

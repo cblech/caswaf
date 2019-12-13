@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Wrapper">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>webserver.cpp</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="routing" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="webserver">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="webserver::http_request" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>webserver.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Typedef Name="webserver::request_func" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>webserver.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAgAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>webserver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RootController">
+    <Position X="9.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>RootController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Routing">
+    <Position X="2.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Routing.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoutingEngine">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAEEAAAAAAAAARAAAIAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoutingEngine.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="routes" />
+      <Field Name="error404Controller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Route">
+    <Position X="6.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAEACAAIAACAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Route.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="controller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Controller">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Controller.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="6.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AWAEk4EqCrBsCEBAAOMIIAAyAAUEQBIghQkwgkAFUko=</HashCode>
+      <FileName>D:\Programme\vs\VC\Tools\MSVC\14.24.28314\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Error404Controller">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Error404Controller.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="CasRequest" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>casTypes.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CasResponse" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>casTypes.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

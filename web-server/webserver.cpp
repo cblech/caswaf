@@ -32,6 +32,9 @@
 #include <string>
 #include <map>
 #include <sstream>
+
+
+#include <thread>
 //<process.h>
 
 
@@ -39,6 +42,8 @@
 #include "socket/src/Socket.h"
 #include "UrlHelper.h"
 #include "base64/base64.h"
+
+#include "Routing.h"
 
 webserver::request_func webserver::request_func_=0;
 
@@ -150,15 +155,36 @@ unsigned webserver::Request(void* ptr_s) {
   return 0;
 }
 
-webserver::webserver(unsigned int port_to_listen, request_func r) {
+
+class Wrapper
+{
+public:
+    static void process(webserver::http_request* r)
+    {
+        routing.processRequest(r);
+    }
+
+private:
+    static Routing routing;
+};
+
+Routing Wrapper::routing = Routing();
+
+//Modified by cblech
+webserver::webserver(unsigned int port_to_listen) {
   SocketServer in(port_to_listen,5);
 
+  Routing rt;
+  request_func r = Wrapper::process;
+
   request_func_ = r;
+
 
   while (1) {
     Socket* ptr_s=in.Accept();
 
     unsigned ret;
+
     _beginthreadex(0,0,Request,(void*) ptr_s,0,&ret);
   }
 }

@@ -102,6 +102,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Programme\vs\boost\boost_1_72_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -112,6 +113,9 @@
     <PreBuildEvent>
       <Command>$(ProjectDir)..\build-tools\htmltostring.bat</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -151,22 +155,37 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="base64\base64.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Error404Controller.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RootController.cpp" />
+    <ClCompile Include="Route.cpp" />
+    <ClCompile Include="Routing.cpp" />
+    <ClCompile Include="RoutingEngine.cpp" />
     <ClCompile Include="socket\src\Socket.cpp" />
     <ClCompile Include="stdHelpers.cpp" />
     <ClCompile Include="UrlHelper.cpp" />
-    <ClCompile Include="WebPathHandler.cpp" />
     <ClCompile Include="webserver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base64\base64.h" />
     <ClInclude Include="casTypes.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Error404Controller.h" />
+    <ClInclude Include="RootController.h" />
+    <ClInclude Include="Route.h" />
+    <ClInclude Include="Routing.h" />
+    <ClInclude Include="RoutingEngine.h" />
     <ClInclude Include="socket\src\Socket.h" />
+    <ClInclude Include="starStringEquals.h" />
+    <ClInclude Include="starStringEqualsTest.h" />
     <ClInclude Include="stdHelpers.h" />
     <ClInclude Include="Tracer.h" />
     <ClInclude Include="UrlHelper.h" />
-    <ClInclude Include="WebPathHandler.h" />
     <ClInclude Include="webserver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

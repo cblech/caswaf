@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "web-server", "web-server\web-server.vcxproj", "{DB13EC86-2604-4B59-89BA-123C9B06053F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94E68C94-818A-442B-AF8D-283578ABFB50} = {94E68C94-818A-442B-AF8D-283578ABFB50}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "precompileHTML", "precompileHTML\precompileHTML.vcxproj", "{94E68C94-818A-442B-AF8D-283578ABFB50}"
 EndProject

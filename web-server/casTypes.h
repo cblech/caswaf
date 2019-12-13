@@ -1,7 +1,9 @@
 #pragma once
-struct casRequest {
-
+struct CasRequest {
+	std::string method;
+	std::string path;
 };
-struct casResponse {
-
+struct CasResponse {
+	std::string returnCode = "200 - OK";
+	std::string content;
 };

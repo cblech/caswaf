@@ -1,3 +1,4 @@
+#pragma once
 /*
    WebServer.h
 
@@ -66,7 +67,7 @@ class webserver {
     };
 
     typedef   void (*request_func) (http_request*);
-    webserver(unsigned int port_to_listen, request_func);
+    webserver(unsigned int port_to_listen);
 
 
   private:

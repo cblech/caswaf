@@ -1,19 +1,23 @@
 #include "webserver.h"
 #include "socket/src/Socket.h"
+#include "Routing.h"
+#include <iostream>
 
 
+#include "starStringEqualsTest.h"
 
-void Request_Handler(webserver::http_request* r) {
-	Socket s = *(r->s_);
-
-
-
-
-
-
-	r->answer_ = "HTML";
-}
+//void Request_Handler(webserver::http_request* r) {
+//	Socket s = *(r->s_);
+//
+//	Routing routing();
+//
+//
+//	r->answer_ = "HTML";
+//}
 
 int main() {
-	webserver(8080, Request_Handler);
+
+	std::cout << (starstringTest()?"Tests Successfull":"Error in testing")<< std::endl;
+
+	webserver(8080);
 }
