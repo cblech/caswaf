@@ -1,4 +1,6 @@
 *.swp
 *.o
+*.obj
+*.exe
 WebServer.exe
 /.vs

@@ -174,11 +174,7 @@ Routing Wrapper::routing = Routing();
 webserver::webserver(unsigned int port_to_listen) {
   SocketServer in(port_to_listen,5);
 
-  Routing rt;
-  request_func r = Wrapper::process;
-
-  request_func_ = r;
-
+  request_func_ = Wrapper::process;
 
   while (1) {
     Socket* ptr_s=in.Accept();
