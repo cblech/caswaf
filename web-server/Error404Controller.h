@@ -6,6 +6,6 @@
 class Error404Controller: public Controller
 {
 	// Inherited via Controller
-	virtual CasResponse makeHTML(CasRequest request) override;
+	//virtual CasResponse makeHTML(CasRequest request) override;
 };
 

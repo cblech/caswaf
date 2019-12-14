@@ -5,6 +5,6 @@
 class Controller
 {
 public:
-	virtual CasResponse makeHTML(CasRequest request) = 0;
+	CasResponse makeHTML(CasRequest request);
 };
 

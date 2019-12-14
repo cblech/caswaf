@@ -1,6 +1,7 @@
 #include "RoutingEngine.h"
 #include "webserver.h"
 #include "starStringEquals.h"
+#include <iostream>
 
 void RoutingEngine::processRequest(webserver::http_request* request)
 {
@@ -14,7 +15,12 @@ void RoutingEngine::processRequest(webserver::http_request* request)
 	CasRequest casReq;
 	casReq.path = request->path_;
 	casReq.method = request->method_;
+	casReq.params = request->params_;
 
+	casReq.accept = request->accept_;
+	casReq.accept_language = request->accept_language_;
+	casReq.accept_encoding = request->accept_encoding_;
+	casReq.user_agent = request->user_agent_;
 
 	//Prepare response
 	CasResponse response;

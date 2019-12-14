@@ -158,6 +158,7 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Error404Controller.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Part.cpp" />
     <ClCompile Include="RootController.cpp" />
     <ClCompile Include="Route.cpp" />
     <ClCompile Include="Routing.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="casTypes.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Error404Controller.h" />
+    <ClInclude Include="Part.h" />
     <ClInclude Include="RootController.h" />
     <ClInclude Include="Route.h" />
     <ClInclude Include="Routing.h" />
@@ -180,6 +182,7 @@
     <ClInclude Include="starStringEquals.h" />
     <ClInclude Include="starStringEqualsTest.h" />
     <ClInclude Include="stdHelpers.h" />
+    <ClInclude Include="StringExplode.h" />
     <ClInclude Include="Tracer.h" />
     <ClInclude Include="UrlHelper.h" />
     <ClInclude Include="webserver.h" />

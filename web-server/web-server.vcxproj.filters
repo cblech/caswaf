@@ -40,6 +40,12 @@
     <Filter Include="Headerdateien\engine\test">
       <UniqueIdentifier>{2f4cdaca-590f-4f0d-a45f-daf60feaa7a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Quelldateien\website\views">
+      <UniqueIdentifier>{22ad923e-401b-4686-9049-999d03848ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\website\views">
+      <UniqueIdentifier>{401bbbe1-e6ef-4df7-8776-41730e81df29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base64\base64.cpp">
@@ -77,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="Error404Controller.cpp">
       <Filter>Quelldateien\website\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Part.cpp">
+      <Filter>Quelldateien\engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +133,12 @@
     </ClInclude>
     <ClInclude Include="Error404Controller.h">
       <Filter>Headerdateien\website\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="StringExplode.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Part.h">
+      <Filter>Headerdateien\engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
