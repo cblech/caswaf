@@ -1,7 +1,6 @@
 #pragma once
 #include "Controller.h"
-#include "..\generated\html\App.html.h"
-#include "..\generated\html\content\one.html.h"
+#include "html.generated.h"
 
 class RootController :public Controller
 {
@@ -11,7 +10,9 @@ public:
 	RootController()
 	{
 		partstructure = new PartApp();
-		partstructure->addSubpart(PartApp::content, new Partone());
+		auto po = new Partone();
+		partstructure->addSubpart(PartApp::content,po);
+		po->addSubpart(Partone::subcontent, new Partothercontent());
 		
 	}
 };

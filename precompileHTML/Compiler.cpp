@@ -322,7 +322,7 @@ bool Compiler::compileFile(fs::path sourcePath)
 			break;
 		case part:
 
-			ofs << "\"" << token.text << "\",Token::Type::html,"<< pluginPoints.at(token.text);
+			ofs << "\"" << token.text << "\",Token::Type::part,"<< pluginPoints.at(token.text);
 
 			break;
 		default:

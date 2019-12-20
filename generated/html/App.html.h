@@ -26,7 +26,7 @@ tokenList.push_back({ {60,47,104,101,97,100,62},Token::Type::html,0 });
 tokenList.push_back({ {60,98,111,100,121,62},Token::Type::html,0 });
 tokenList.push_back({ {60,104,49,62,72,97,108,108,111,32,71,101,110,101,114,97,116,101,100,32,72,84,77,76,32,50,60,47,104,49,62},Token::Type::html,0 });
 tokenList.push_back({ {60,112,32,99,108,97,115,115,61,34,116,101,115,116,34,62,67,111,110,116,101,110,116,32,97,117,115,32,65,112,112,46,104,116,109,108,60,47,112,62},Token::Type::html,0 });
-tokenList.push_back({ "content",Token::Type::html,1 });
+tokenList.push_back({ "content",Token::Type::part,1 });
 tokenList.push_back({ {60,47,98,111,100,121,62},Token::Type::html,0 });
 tokenList.push_back({ {60,47,104,116,109,108,62},Token::Type::html,0 });
 }
