@@ -88,6 +88,9 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Programme\vs\boost\boost_1_72_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4838;4309;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,6 +106,9 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Programme\vs\boost\boost_1_72_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4838;4309;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -111,7 +117,7 @@
       <AdditionalLibraryDirectories>D:\Programme\vs\boost\boost_1_72_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>$(ProjectDir)..\build-tools\htmltostring.bat</Command>
+      <Command>$(ProjectDir)..\tools\precompileHTML.exe $(ProjectDir)..\content $(ProjectDir)..\generated</Command>
     </PreBuildEvent>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -126,6 +132,9 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Programme\vs\boost\boost_1_72_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4838;4309;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,6 +153,9 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Programme\vs\boost\boost_1_72_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4838;4309;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,10 +168,8 @@
   <ItemGroup>
     <ClCompile Include="base64\base64.cpp" />
     <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="Error404Controller.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Part.cpp" />
-    <ClCompile Include="RootController.cpp" />
     <ClCompile Include="Route.cpp" />
     <ClCompile Include="Routing.cpp" />
     <ClCompile Include="RoutingEngine.cpp" />
@@ -169,6 +179,10 @@
     <ClCompile Include="webserver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\generateddev\App.html.h" />
+    <ClInclude Include="..\generateddev\content\one.html.h" />
+    <ClInclude Include="..\generateddev\content\othercontent.html.h" />
+    <ClInclude Include="..\generated\StaticRecouces.h" />
     <ClInclude Include="base64\base64.h" />
     <ClInclude Include="casTypes.h" />
     <ClInclude Include="Controller.h" />
@@ -181,8 +195,11 @@
     <ClInclude Include="socket\src\Socket.h" />
     <ClInclude Include="starStringEquals.h" />
     <ClInclude Include="starStringEqualsTest.h" />
+    <ClInclude Include="StaticController.h" />
+    <ClInclude Include="StaticRecource.h" />
     <ClInclude Include="stdHelpers.h" />
     <ClInclude Include="StringExplode.h" />
+    <ClInclude Include="style.css.h" />
     <ClInclude Include="Tracer.h" />
     <ClInclude Include="UrlHelper.h" />
     <ClInclude Include="webserver.h" />

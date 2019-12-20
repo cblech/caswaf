@@ -24,6 +24,9 @@
    René Nyffenegger rene.nyffenegger@adp-gmbh.ch
 
    Thanks to Tom Lynn who pointed out an error in this source code.
+
+
+   This file is Modified by cblech
 */
 
 #include <ctime>
@@ -125,7 +128,7 @@ unsigned webserver::Request(void* ptr_s) {
   time(&ltime);
   tm* gmt= gmtime(&ltime);
 
-  static std::string const serverName = "RenesWebserver (Windows)";
+  static std::string const serverName = "CASWAF";
 
   char* asctime_remove_nl = asctime(gmt);
   asctime_remove_nl[24] = 0;
@@ -144,13 +147,16 @@ unsigned webserver::Request(void* ptr_s) {
   s.SendLine(std::string("Date: ") + asctime_remove_nl + " GMT");
   s.SendLine(std::string("Server: ") +serverName);
   s.SendLine("Connection: close");
-  s.SendLine("Content-Type: text/html; charset=ISO-8859-1");
+  s.SendLine("Content-Type: "+req.content_type_);
   s.SendLine("Content-Length: " + str_str.str());
   s.SendLine("");
   s.SendLine(req.answer_);
 
   s.Close();
   
+  std::cout << "Connection from: " << req.user_agent_<<std::endl;
+  std::cout << "    Path: " << req.path_<<std::endl;
+
 
   return 0;
 }

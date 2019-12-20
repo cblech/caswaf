@@ -5,6 +5,11 @@ Route::Route(std::string path, Controller* controller):path(path),controller(con
 	int i = 0;
 }
 
+Route::Route(std::string path, Resource res):path(path),controller(new StaticController(res))
+{
+	int i = 0;
+}
+
 Route::~Route()
 {
 	if(controller != nullptr)
@@ -18,5 +23,5 @@ std::string Route::getPath()
 
 CasResponse Route::executeController(CasRequest request)
 {
-	return controller->makeHTML(request);
+	return controller->onRequest(request);
 }

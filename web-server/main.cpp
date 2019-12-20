@@ -17,7 +17,7 @@
 
 int main() {
 
-	std::cout << (starstringTest()?"Tests Successfull":"Error in testing")<< std::endl;
+	//std::cout << (starstringTest()?"Tests Successfull":"Error in testing")<< std::endl;
 
-	webserver(8080);
+	webserver(80);
 }

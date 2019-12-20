@@ -15,4 +15,5 @@ struct CasRequest {
 struct CasResponse {
 	std::string returnCode = "200 - OK";
 	std::string content;
+	std::string contentType;
 };

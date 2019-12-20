@@ -1,14 +1,14 @@
-﻿  C:\Users\Jonathan\source\repos\cpp-webserver\web-server
-  C:\Users\Jonathan\source\repos\cpp-webserver\html
-  Controller.cpp
-  Error404Controller.cpp
-  RootController.cpp
-  Route.cpp
+﻿  C:\Users\jonathan\source\repos\casweb\web-server
+  [2019-12-20 05:07:36.642727] [0x00004860] [info]    Compiling: "C:\Users\jonathan\source\repos\casweb\web-server\..\content\html\App.html" into "C:\Users\jonathan\source\repos\casweb\web-server\..\generated\html\App.html.h"
+  [2019-12-20 05:07:36.672604] [0x00004860] [info]    Compiling: "C:\Users\jonathan\source\repos\casweb\web-server\..\content\html\content\one.html" into "C:\Users\jonathan\source\repos\casweb\web-server\..\generated\html\content\one.html.h"
+  [2019-12-20 05:07:36.682968] [0x00004860] [info]    Compiling: "C:\Users\jonathan\source\repos\casweb\web-server\..\content\html\content\othercontent.html" into "C:\Users\jonathan\source\repos\casweb\web-server\..\generated\html\content\othercontent.html.h"
+  [2019-12-20 05:07:38.782930] [0x00004860] [warning] Static Compiler: bootstrap.css.map Unknown File extention. Defaulting to text/plain
+  [2019-12-20 05:07:38.960067] [0x00004860] [warning] Static Compiler: fu.txt Unknown File extention. Defaulting to text/plain
   Routing.cpp
-  RoutingEngine.cpp
   main.cpp
   webserver.cpp
-C:\Users\Jonathan\source\repos\cpp-webserver\web-server\webserver.cpp(90,60): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Jonathan\source\repos\cpp-webserver\web-server\webserver.cpp(100,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Generating Code...
-  web-server.vcxproj -> C:\Users\Jonathan\source\repos\cpp-webserver\x64\Debug\web-server.exe
+C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(93,60): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(103,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\jonathan\source\repos\casweb\generated\StaticRecouces.h(19,467797): warning C4305: 'initializing': truncation from 'unsigned int' to 'const char' (compiling source file Routing.cpp)
+C:\Users\jonathan\source\repos\casweb\generated\StaticRecouces.h(25,9946): warning C4305: 'initializing': truncation from 'unsigned int' to 'const char' (compiling source file Routing.cpp)
+  web-server.vcxproj -> C:\Users\jonathan\source\repos\casweb\x64\Debug\web-server.exe

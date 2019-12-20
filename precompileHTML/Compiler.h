@@ -30,5 +30,9 @@ private:
 
 	bool compilePath(path p);
 	bool compileFile(path p);
+
+
+	bool compileStatic(path p);
+	std::string compileStaticFile(path p);
 };
 

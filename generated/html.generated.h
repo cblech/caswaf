@@ -5,5 +5,6 @@
 // ##  DO NOT MODIFY  ##
 // #####################
 //
-#include "newTest.html.h"
-#include "subparts\test.html.h"
+#include "html\App.html.h"
+#include "html\content\one.html.h"
+#include "html\content\othercontent.html.h"

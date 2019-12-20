@@ -6,6 +6,16 @@
 class Error404Controller: public Controller
 {
 	// Inherited via Controller
-	//virtual CasResponse makeHTML(CasRequest request) override;
+	virtual CasResponse onRequest(CasRequest request) override
+	{
+		return {
+			"404 Not found",
+			makeHTML(request)
+		};
+	}
+	virtual std::string makeHTML(CasRequest request) override
+	{
+		return "404 - Site not found";
+	}
 };
 

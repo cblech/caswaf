@@ -72,17 +72,11 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien\engine</Filter>
     </ClCompile>
-    <ClCompile Include="RootController.cpp">
-      <Filter>Quelldateien\website\controller</Filter>
-    </ClCompile>
     <ClCompile Include="Routing.cpp">
       <Filter>Quelldateien\website</Filter>
     </ClCompile>
     <ClCompile Include="webserver.cpp">
       <Filter>Quelldateien\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Error404Controller.cpp">
-      <Filter>Quelldateien\website\controller</Filter>
     </ClCompile>
     <ClCompile Include="Part.cpp">
       <Filter>Quelldateien\engine</Filter>
@@ -138,6 +132,27 @@
       <Filter>Headerdateien\engine</Filter>
     </ClInclude>
     <ClInclude Include="Part.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticController.h">
+      <Filter>Headerdateien\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\generateddev\App.html.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\generateddev\content\one.html.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\generateddev\content\othercontent.html.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="style.css.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\generated\StaticRecouces.h">
+      <Filter>Headerdateien\website\views</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticRecource.h">
       <Filter>Headerdateien\engine</Filter>
     </ClInclude>
   </ItemGroup>

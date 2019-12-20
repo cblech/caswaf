@@ -27,7 +27,7 @@ void RoutingEngine::processRequest(webserver::http_request* request)
 
 	if (route == nullptr)
 	{
-		response = error404Controller->makeHTML(casReq);
+		response = error404Controller->onRequest(casReq);
 	}
 	else
 	{
@@ -36,6 +36,7 @@ void RoutingEngine::processRequest(webserver::http_request* request)
 
 	request->answer_ = response.content;
 	request->status_ = response.returnCode;
+	request->content_type_ = response.contentType;
 
 }
 

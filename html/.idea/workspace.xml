@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e7b53cfe-d410-4f02-aafd-49e640e2c936" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../generated/html.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/../generated/html.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/html.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subparts/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/Compiler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/Compiler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/precompileHTML.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/precompileHTML.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/precompileHTML.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/precompileHTML.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/Compiler.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/Compiler.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.log" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/precompileHTML.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/precompileHTML.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/precompileHTML.tlog/unsuccessfulbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.log" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.delete.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.delete.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/precompileHTML.write.1u.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/precompileHTML.tlog/precompileHTML.write.1u.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../precompileHTML/x64/Release/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../precompileHTML/x64/Release/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Controller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Error404Controller.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Error404Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Error404Controller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Part.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Part.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Part.h" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Part.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/RootController.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/RootController.h" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/RootController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Route.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Route.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Route.h" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Route.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/Routing.h" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/Routing.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/RoutingEngine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/RoutingEngine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/web-server.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/web-server.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/web-server.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/web-server.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Controller.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Controller.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Controller.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Controller.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Error404Controller.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Error404Controller.sbr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/RootController.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/RootController.sbr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Route.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Route.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Route.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Route.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Routing.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Routing.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Routing.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Routing.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/RoutingEngine.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/RoutingEngine.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/RoutingEngine.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/RoutingEngine.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Socket.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Socket.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/Socket.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/Socket.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/UrlHelper.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/UrlHelper.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/UrlHelper.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/UrlHelper.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/WebPathHandler.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/base64.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/base64.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/base64.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/base64.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/main.obj.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/main.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/main.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/rootcontroller.new.obj.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/route.obj.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/routingengine.new.obj.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/stdHelpers.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/stdHelpers.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/stdHelpers.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/stdHelpers.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.Build.CppClean.log" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.Build.CppClean.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.log" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/bscmake.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/bscmake.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/bscmake.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/bscmake.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/web-server.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/web-server.tlog/web-server.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/webserver.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/webserver.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-server/x64/Debug/webserver.sbr" beforeDir="false" afterPath="$PROJECT_DIR$/../web-server/x64/Debug/webserver.sbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/precompileHTML.bsc" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/precompileHTML.bsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/precompileHTML.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/precompileHTML.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/precompileHTML.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/precompileHTML.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/precompileHTML.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/precompileHTML.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/web-server.bsc" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/web-server.bsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/web-server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/web-server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/web-server.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/web-server.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Debug/web-server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Debug/web-server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Release/precompileHTML.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Release/precompileHTML.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Release/precompileHTML.iobj" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Release/precompileHTML.iobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Release/precompileHTML.ipdb" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Release/precompileHTML.ipdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../x64/Release/precompileHTML.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../x64/Release/precompileHTML.pdb" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\jonathan\source\repos\casweb\html\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UrX67HYcQkr4vEJXB4cIlCUA1Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../content" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7b53cfe-d410-4f02-aafd-49e640e2c936" name="Default Changelist" comment="" />
+      <created>1576115509440</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576115509440</updated>
+      <workItem from="1576115510568" duration="819000" />
+      <workItem from="1576335849443" duration="3286000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

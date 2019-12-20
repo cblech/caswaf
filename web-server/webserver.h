@@ -58,6 +58,7 @@ class webserver {
       std::string                        auth_realm_;
     
       std::string                        answer_;
+      std::string                        content_type_;
     
       /*   authentication_given_ is true when the user has entered a username and password.
            These can then be read from username_ and password_ */
