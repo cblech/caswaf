@@ -1,5 +1,7 @@
 #include "Routing.h"
 #include "../generated/StaticRecouces.h"
+#include "twoController.h"
+#include "twoBoboController.h"
 
 Routing::Routing()
 {
@@ -18,7 +20,7 @@ Routing::Routing()
 	addRoute(new Route("/", new RootController()));
 	addRoute(new Route("/one", new RootController()));
 	addRoute(new Route("/one/one", new RootController()));
-	addRoute(new Route("/two", new RootController()));
-	addRoute(new Route("/two/*/bobo", new RootController()));
+	addRoute(new Route("/two", new TwoController()));
+	addRoute(new Route("/two/*/bobo", new TwoBoboController()));
 
 }

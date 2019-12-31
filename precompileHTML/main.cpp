@@ -2,6 +2,7 @@
 #include <boost/filesystem.hpp>
 #include "Compiler.h"
 #include "log.h"
+#include "HTMLParser.h"
 
 
 
@@ -13,6 +14,14 @@ namespace fs = boost::filesystem;
 
 int main(int argc, char* argv[])
 {
+
+	info << "Testing HTML Parser";
+
+
+
+
+	return 0; // TODO: remove testing
+
 	try {
 		if (argv[argc - 2] != nullptr && argv[argc - 1] != nullptr)
 		{

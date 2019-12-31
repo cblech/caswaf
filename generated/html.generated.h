@@ -8,3 +8,5 @@
 #include "html\App.html.h"
 #include "html\content\one.html.h"
 #include "html\content\othercontent.html.h"
+#include "html\content\two.html.h"
+#include "html\content\twobobo.html.h"

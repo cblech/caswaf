@@ -14,7 +14,6 @@ struct htmlToken
 	htmlToken(htmlTokenType type, string text) :type(type), text(text) {}
 	htmlTokenType type;
 	string text;
-
 };
 
 class Compiler

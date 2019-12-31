@@ -3,6 +3,8 @@
 #include <boost/algorithm/string.hpp>
 #include "log.h"
 #include <sstream>
+#include <map>
+#include <lexbor/html/html.h>
 
 using namespace std;
 
@@ -231,6 +233,7 @@ bool Compiler::compileFile(fs::path sourcePath)
 	//plugin Points
 	std::map<std::string, int> pluginPoints;
 
+	
 	//create the target directory if not exist
 	if (!fs::is_directory(destPath.parent_path()))
 	{
@@ -247,6 +250,7 @@ bool Compiler::compileFile(fs::path sourcePath)
 	list<htmlToken> tokens;
 
 	//Tokenizing
+	/*
 	string line;
 	int pluginCount = 0;
 	while (getline(ifs, line))
@@ -264,6 +268,12 @@ bool Compiler::compileFile(fs::path sourcePath)
 			tokens.push_back(htmlToken(htmlTokenType::html, line));
 		}
 	}
+	*/
+
+
+
+
+	//close the .html file
 	ifs.close();
 
 

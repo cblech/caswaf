@@ -14,8 +14,5 @@ class Partothercontent :public Part
 public:
 Partothercontent()
 {
-tokenList.push_back({ {60,112,62},Token::Type::html,0 });
-tokenList.push_back({ {116,104,105,115,32,105,115,32,111,116,104,101,114,32,67,111,110,116,101,110,116},Token::Type::html,0 });
-tokenList.push_back({ {60,47,112,62},Token::Type::html,0 });
 }
 };

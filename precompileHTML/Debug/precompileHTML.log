@@ -1,0 +1,7 @@
+﻿  Compiler.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\include\sstream(15,9): warning C4081: expected 'identifier'; found 'for'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\include\sstream(16,9): warning C4081: expected 'identifier'; found 'for'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\include\sstream(579,9): warning C4081: expected 'identifier'; found 'for'
+  main.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'libboost_log-vc142-mt-gd-x32-1_71.lib'

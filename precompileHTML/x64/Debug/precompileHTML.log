@@ -1,6 +1,5 @@
-﻿  Compiler.cpp
-D:\Programme\vs\VC\Tools\MSVC\14.24.28314\include\sstream(15,9): warning C4081: expected 'identifier'; found 'for'
-D:\Programme\vs\VC\Tools\MSVC\14.24.28314\include\sstream(16,9): warning C4081: expected 'identifier'; found 'for'
-D:\Programme\vs\VC\Tools\MSVC\14.24.28314\include\sstream(579,9): warning C4081: expected 'identifier'; found 'for'
-  precompileHTML.vcxproj -> C:\Users\jonathan\source\repos\casweb\x64\Debug\precompileHTML.exe
+﻿  HTMLParser.cpp
+  main.cpp
+  Generating Code...
+  precompileHTML.vcxproj -> C:\Users\Jonathan\source\repos\cpp-webserver\x64\Debug\precompileHTML.exe
           1 Datei(en) kopiert.

@@ -201,6 +201,8 @@
     <ClInclude Include="StringExplode.h" />
     <ClInclude Include="style.css.h" />
     <ClInclude Include="Tracer.h" />
+    <ClInclude Include="twoBoboController.h" />
+    <ClInclude Include="twoController.h" />
     <ClInclude Include="UrlHelper.h" />
     <ClInclude Include="webserver.h" />
   </ItemGroup>

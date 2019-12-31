@@ -12,14 +12,7 @@
 class Partone :public Part
 {
 public:
-static const int subcontent = 1;
 Partone()
 {
-tokenList.push_back({ {60,104,49,62},Token::Type::html,0 });
-tokenList.push_back({ {70,105,114,115,116,32,67,111,110,116,101,110,116},Token::Type::html,0 });
-tokenList.push_back({ {60,47,104,49,62},Token::Type::html,0 });
-tokenList.push_back({ {60,100,105,118,62},Token::Type::html,0 });
-tokenList.push_back({ "subcontent",Token::Type::part,1 });
-tokenList.push_back({ {60,47,100,105,118,62},Token::Type::html,0 });
 }
 };

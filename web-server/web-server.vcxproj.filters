@@ -155,6 +155,12 @@
     <ClInclude Include="StaticRecource.h">
       <Filter>Headerdateien\engine</Filter>
     </ClInclude>
+    <ClInclude Include="twoController.h">
+      <Filter>Headerdateien\website\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="twoBoboController.h">
+      <Filter>Headerdateien\website\controller</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
