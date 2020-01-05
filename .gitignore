@@ -1,5 +1,8 @@
-*.swp
-*.o
-*.obj
-WebServer.exe
 /.vs
+
+/x64
+/web-server/x64
+/precompileHTML/x64
+
+/packages
+/generated

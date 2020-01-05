@@ -1,13 +1,30 @@
 ﻿  C:\Users\jonathan\source\repos\casweb\web-server
-  [2020-01-05 21:58:09.626906] [0x00006a54] [info]    Testing HTML Parser
-  [2020-01-05 21:58:09.628904] [0x00006a54] [info]    <p bla="huhn babera" id="haiho" >
-  [2020-01-05 21:58:09.628904] [0x00006a54] [info]    <div cute="" ><p id="haiho" >parag <br foo="bar" > blabla</p>hallo</div>
-  [2020-01-05 21:58:09.628904] [0x00006a54] [info]    Error: Test Error
-  [2020-01-05 21:58:09.644906] [0x00006a54] [info]    Compiling: "C:\Users\jonathan\source\repos\casweb\web-server\..\content\html\App.html" into "C:\Users\jonathan\source\repos\casweb\web-server\..\generated\html\App.html.h"
-  [2020-01-05 21:58:09.652907] [0x00006a54] [info]    Compiling: "C:\Users\jonathan\source\repos\casweb\web-server\..\content\html\root.html" into "C:\Users\jonathan\source\repos\casweb\web-server\..\generated\html\root.html.h"
-  [2020-01-05 21:58:11.564906] [0x00006a54] [warning] Static Compiler: bootstrap.css.map Unknown File extention. Defaulting to text/plain
-  [2020-01-05 21:58:11.739903] [0x00006a54] [warning] Static Compiler: fu.txt Unknown File extention. Defaulting to text/plain
+  [2020-01-05 22:57:21.190800] [0x00007118] [info]    Testing HTML Parser
+  [2020-01-05 22:57:21.192800] [0x00007118] [info]    <p bla="huhn babera" id="haiho" >
+  [2020-01-05 22:57:21.192800] [0x00007118] [info]    <div cute="" ><p id="haiho" >parag <br foo="bar" > blabla</p>hallo</div>
+  [2020-01-05 22:57:21.192800] [0x00007118] [info]    Error: Test Error
+  [2020-01-05 22:57:21.209803] [0x00007118] [info]    Compiling: "C:\Users\jonathan\source\repos\casweb\web-server\..\content\html\App.html" into "C:\Users\jonathan\source\repos\casweb\web-server\..\generated\html\App.html.h"
+  [2020-01-05 22:57:21.218801] [0x00007118] [info]    Compiling: "C:\Users\jonathan\source\repos\casweb\web-server\..\content\html\root.html" into "C:\Users\jonathan\source\repos\casweb\web-server\..\generated\html\root.html.h"
+  [2020-01-05 22:57:23.152811] [0x00007118] [warning] Static Compiler: bootstrap.css.map Unknown File extention. Defaulting to text/plain
+  [2020-01-05 22:57:23.328800] [0x00007118] [warning] Static Compiler: fu.txt Unknown File extention. Defaulting to text/plain
+  base64.cpp
+  Controller.cpp
+  main.cpp
+  Part.cpp
+  Route.cpp
   Routing.cpp
-C:\Users\jonathan\source\repos\casweb\generated\StaticRecouces.h(19,467797): warning C4305: 'initializing': truncation from 'unsigned int' to 'const char'
-C:\Users\jonathan\source\repos\casweb\generated\StaticRecouces.h(25,9946): warning C4305: 'initializing': truncation from 'unsigned int' to 'const char'
+  RoutingEngine.cpp
+  Socket.cpp
+  stdHelpers.cpp
+  UrlHelper.cpp
+  webserver.cpp
+C:\Users\jonathan\source\repos\casweb\web-server\base64\base64.cpp(88,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jonathan\source\repos\casweb\web-server\base64\base64.cpp(99,61): warning C4267: '=': conversion from 'size_t' to 'unsigned char', possible loss of data
+C:\Users\jonathan\source\repos\casweb\web-server\base64\base64.cpp(113,59): warning C4267: '=': conversion from 'size_t' to 'unsigned char', possible loss of data
+C:\Users\jonathan\source\repos\casweb\web-server\socket\src\Socket.cpp(153,33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jonathan\source\repos\casweb\web-server\socket\src\Socket.cpp(157,33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(93,60): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(103,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\jonathan\source\repos\casweb\generated\StaticRecouces.h(19,467797): warning C4305: 'initializing': truncation from 'unsigned int' to 'const char' (compiling source file Routing.cpp)
+C:\Users\jonathan\source\repos\casweb\generated\StaticRecouces.h(25,9946): warning C4305: 'initializing': truncation from 'unsigned int' to 'const char' (compiling source file Routing.cpp)
   web-server.vcxproj -> C:\Users\jonathan\source\repos\casweb\x64\Debug\web-server.exe
