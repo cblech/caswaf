@@ -14,13 +14,20 @@ namespace fs = boost::filesystem;
 
 int main(int argc, char* argv[])
 {
-
+	
 	info << "Testing HTML Parser";
 
+	auto nl = HTMLParser::parseHTML("<div cute><p id=\"haiho\">parag <br foo=\"bar\"/> blabla</p>hallo</div>");
 
+	auto test = HTMLParser::parseNodeFromToken(HTMLParser::Token(HTMLParser::Token::Type::tag, "<  p  \n id    =\"haiho\" bla=\"huhn babera\">"));
 
+	info << test;
+	info << nl;
 
-	return 0; // TODO: remove testing
+	//return 0; // TODO: remove testing
+	
+
+	info << "Error: Test Error";
 
 	try {
 		if (argv[argc - 2] != nullptr && argv[argc - 1] != nullptr)

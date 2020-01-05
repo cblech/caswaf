@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 #include <boost/filesystem.hpp>
+#include "HTMLParser.h"
 
 
 namespace fs = boost::filesystem;
@@ -8,7 +9,7 @@ using fs::path;
 using std::string;
 
 
-enum htmlTokenType {none, html, part };
+enum htmlTokenType {none, html, part, data};
 struct htmlToken
 {
 	htmlToken(htmlTokenType type, string text) :type(type), text(text) {}
@@ -30,6 +31,8 @@ private:
 	bool compilePath(path p);
 	bool compileFile(path p);
 
+
+	void htmlNodesToHtmlToken(const HTMLNodeList & nodes, std::list<htmlToken> & tokens, string & tokenWrite, std::map<std::string, int> &  pluginPoints, int & pluginCount, std::map<std::string,int>& dataPoints , int & dataCount );
 
 	bool compileStatic(path p);
 	std::string compileStaticFile(path p);

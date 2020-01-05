@@ -137,29 +137,11 @@
     <ClInclude Include="StaticController.h">
       <Filter>Headerdateien\engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\generateddev\App.html.h">
-      <Filter>Ressourcendateien</Filter>
-    </ClInclude>
-    <ClInclude Include="..\generateddev\content\one.html.h">
-      <Filter>Ressourcendateien</Filter>
-    </ClInclude>
-    <ClInclude Include="..\generateddev\content\othercontent.html.h">
-      <Filter>Ressourcendateien</Filter>
-    </ClInclude>
-    <ClInclude Include="style.css.h">
-      <Filter>Ressourcendateien</Filter>
-    </ClInclude>
     <ClInclude Include="..\generated\StaticRecouces.h">
       <Filter>Headerdateien\website\views</Filter>
     </ClInclude>
     <ClInclude Include="StaticRecource.h">
       <Filter>Headerdateien\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="twoController.h">
-      <Filter>Headerdateien\website\controller</Filter>
-    </ClInclude>
-    <ClInclude Include="twoBoboController.h">
-      <Filter>Headerdateien\website\controller</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

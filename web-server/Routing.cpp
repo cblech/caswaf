@@ -1,7 +1,7 @@
 #include "Routing.h"
 #include "../generated/StaticRecouces.h"
-#include "twoController.h"
-#include "twoBoboController.h"
+#include "RootController.h"
+#include "Error404Controller.h"
 
 Routing::Routing()
 {
@@ -18,9 +18,5 @@ Routing::Routing()
 
 	//html Routes
 	addRoute(new Route("/", new RootController()));
-	addRoute(new Route("/one", new RootController()));
-	addRoute(new Route("/one/one", new RootController()));
-	addRoute(new Route("/two", new TwoController()));
-	addRoute(new Route("/two/*/bobo", new TwoBoboController()));
 
 }

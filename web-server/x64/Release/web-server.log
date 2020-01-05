@@ -1,16 +1,5 @@
-﻿  Socket.cpp
-C:\Users\jonathan\source\repos\casweb\web-server\socket\src\Socket.cpp(153,33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jonathan\source\repos\casweb\web-server\socket\src\Socket.cpp(157,33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jonathan\source\repos\casweb\web-server\socket\src\Socket.cpp(206,1): error C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\WinSock2.h(2219): message : see declaration of 'gethostbyname'
-C:\Users\jonathan\source\repos\casweb\web-server\socket\src\Socket.cpp(207,1): error C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(182): message : see declaration of 'strerror'
-C:\Users\jonathan\source\repos\casweb\web-server\socket\src\Socket.cpp(218,1): error C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(182): message : see declaration of 'strerror'
-  webserver.cpp
-C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(85,60): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(95,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(121,1): error C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h(496): message : see declaration of 'gmtime'
-C:\Users\jonathan\source\repos\casweb\web-server\webserver.cpp(125,1): error C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h(117): message : see declaration of 'asctime'
+﻿  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 627 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  web-server.vcxproj -> C:\Users\jonathan\source\repos\casweb\x64\Release\web-server.exe

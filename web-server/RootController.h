@@ -10,10 +10,7 @@ public:
 	RootController()
 	{
 		partstructure = new PartApp();
-		auto po = new Partone();
-		partstructure->addSubpart(PartApp::content,po);
-		po->addSubpart(Partone::subcontent, new Partothercontent());
-		
+		partstructure->addSubpart(PartApp::content, new Partroot());
 	}
 };
 

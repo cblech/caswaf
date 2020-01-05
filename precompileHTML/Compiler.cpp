@@ -4,7 +4,7 @@
 #include "log.h"
 #include <sstream>
 #include <map>
-#include <lexbor/html/html.h>
+#include "HTMLParser.h"
 
 using namespace std;
 
@@ -22,7 +22,7 @@ inline std::string strToIntList(std::string s)
 			first = false;
 
 		retVal << (int)c;
-		
+
 	}
 
 	retVal << "}";
@@ -51,6 +51,7 @@ Compiler::Compiler(path htmlPath, path generatedPath) :
 
 	for (path p : allGenerated)
 	{
+		
 		ofs << "#include \"" << p.lexically_relative(generatedPath).string() << "\"" << endl;
 	}
 
@@ -90,6 +91,7 @@ bool Compiler::compilePath(fs::path p)
 	}
 	return true;
 }
+
 
 bool Compiler::compileStatic(path p)
 {
@@ -168,7 +170,7 @@ std::string Compiler::compileStaticFile(path p)
 		int counter = 0;
 		while (!ifs.eof())
 		{
-			ss << ((isfirst) ? "" : ",") << "0x" << std::hex << (int)c<< std::dec;
+			ss << ((isfirst) ? "" : ",") << "0x" << std::hex << (int)c << std::dec;
 			c = ifs.get();
 			isfirst = false;
 			counter++;
@@ -194,7 +196,7 @@ std::string Compiler::compileStaticFile(path p)
 			ss << "text/css";
 			break;
 		default:
-			warning << "Static Compiler: "<< p.filename().string() <<" Unknown File extention. Defaulting to text/plain";
+			warning << "Static Compiler: " << p.filename().string() << " Unknown File extention. Defaulting to text/plain";
 			ss << "text/plain";
 			break;
 		}
@@ -222,77 +224,136 @@ std::string Compiler::compileStaticFile(path p)
 	return "";
 }
 
+void Compiler::htmlNodesToHtmlToken(const HTMLNodeList & nodes, list<htmlToken>& tokens, string& tokenWrite, std::map<std::string, int> &  pluginPoints, int & pluginCount, std::map<std::string,int>& dataPoints , int & dataCount )
+{
+
+	for (auto node : nodes)
+	{
+		//Handle Part Tags
+		if (node.getTagName() == "part")
+		{
+			tokenWrite += node.getOpeningTag();
+
+			if (node.hasAttribute("id"))
+			{
+				tokens.push_back(htmlToken{ htmlTokenType::html,tokenWrite });
+				tokenWrite = "";
+
+
+				tokens.push_back(htmlToken{ htmlTokenType::part,node.getAttribute("id") });
+				pluginPoints.try_emplace(node.getAttribute("id"), ++pluginCount);
+			}
+			else
+			{
+				warning << "Part Tag has no id. Ignoring.";
+			}
+
+			tokenWrite += node.getClosingTag();
+
+		}
+		//Handle Data Tags
+		else if (node.getTagName() == "data")
+		{
+			tokenWrite += node.getOpeningTag();
+
+			if (node.hasAttribute("id"))
+			{
+				tokens.push_back(htmlToken{ htmlTokenType::html,tokenWrite });
+				tokenWrite = "";
+
+
+				tokens.push_back(htmlToken{ htmlTokenType::data,node.getAttribute("id") });
+				dataPoints.try_emplace(node.getAttribute("id"), ++dataCount);
+			}
+			else
+			{
+				warning << "Data Tag has no id. Ignoring.";
+			}
+
+			tokenWrite += node.getClosingTag();
+		}
+		//Handle Text Nodes
+		else if (node.isTextNode())
+		{
+			tokenWrite += node.getText();
+		}
+		//Handle Empty nodes
+		else if (node.isEmpty())
+		{
+			tokenWrite += node.getOpeningTag();
+		}
+		//Handle All Other Tags
+		else
+		{
+			tokenWrite += node.getOpeningTag();
+			htmlNodesToHtmlToken(node.getChildrenIncludingText(), tokens, tokenWrite,pluginPoints,pluginCount, dataPoints,dataCount );
+			tokenWrite += node.getClosingTag();
+		}
+	}
+
+
+
+}
+
+
 bool Compiler::compileFile(fs::path sourcePath)
 {
 	//define the Path for the .html.h file (Target)
 	path destPath = (generatedPath / sourcePath.lexically_relative(htmlPath)).string() + ".h";
 
 	//extract the Tecnical Partname
-	std::string partName = destPath.filename().string().substr(0, destPath.filename().string().size()-7);
+	std::string partName = destPath.filename().string().substr(0, destPath.filename().string().size() - 7);
 
-	//plugin Points
-	std::map<std::string, int> pluginPoints;
 
-	
+
 	//create the target directory if not exist
 	if (!fs::is_directory(destPath.parent_path()))
 	{
 		fs::create_directories(destPath.parent_path());
 	}
-	
+
 	//debug
 	info << "Compiling: " << sourcePath << " into " << destPath;
 
 	//input stream of the .html file (source)
 	ifstream ifs(sourcePath.string());
 
-	//list of all tokens of the .html file
-	list<htmlToken> tokens;
-
-	//Tokenizing
-	/*
-	string line;
-	int pluginCount = 0;
-	while (getline(ifs, line))
+	//read .html file into string
+	ifs.peek();
+	string htmlString = "";
+	while (!ifs.eof())
 	{
-		boost::trim(line);
-
-		
-		if (line.size() > 0 && line.at(0) == '@')
-		{
-			tokens.push_back(htmlToken(htmlTokenType::part, line.substr(1)));
-			pluginPoints.try_emplace(line.substr(1), ++pluginCount);
-		}
-		else
-		{
-			tokens.push_back(htmlToken(htmlTokenType::html, line));
-		}
+		htmlString += ifs.get();
+		ifs.peek();
 	}
-	*/
-
-
-
 
 	//close the .html file
 	ifs.close();
 
 
-	//optimize Tokens
-	/*
-	std::list<htmlToken>::iterator aktToken=tokens.begin(),nxtToken; 
-	while(aktToken!=tokens.end())
-	{
-		nxtToken = aktToken;
-		nxtToken++;
+	HTMLNodeList HTMLPart = HTMLParser::parseHTML(htmlString);
 
-		if (aktToken->type == html && nxtToken->type == html)
-		{
-			//TODO Bring two html tokens together
-		}
 
-		aktToken++;
-	}
-*/
+	//list of all tokens of the .html file
+	list<htmlToken> tokens;
+
+	//Temporary variable for tokenizing
+	string tokenWrite = "";
+
+	//plugin Points
+	std::map<std::string, int> pluginPoints;
+	int pluginCount = 0;
+
+	//data Points
+	std::map<std::string, int> dataPoints;
+	int dataCount = 0;
+
+	//Tokenize
+	htmlNodesToHtmlToken(HTMLPart,tokens,tokenWrite,pluginPoints,pluginCount, dataPoints,dataCount );
+
+	//create last Token
+	tokens.push_back(htmlToken{ htmlTokenType::html,tokenWrite });
+
 
 	//open .html.h stream (writing stream)
 	ofstream ofs(destPath.string());
@@ -310,11 +371,15 @@ bool Compiler::compileFile(fs::path sourcePath)
 	ofs << endl;
 
 
-	ofs << "#pragma once\n#include \"../web-server/Part.h\"\n\nclass Part" << partName<<" :public Part\n{\npublic:\n";
+	ofs << "#pragma once\n#include \"../web-server/Part.h\"\n\nclass Part" << partName << " :public Part\n{\npublic:\n";
 
 	for (auto pp : pluginPoints)
 	{
 		ofs << "static const int " << pp.first << " = " << pp.second << ";" << endl;
+	}	
+	for (auto dp : dataPoints)
+	{
+		ofs << "static const int " << dp.first << " = " << dp.second << ";" << endl;
 	}
 
 	ofs << "Part" << partName << "()\n{\n";
@@ -325,14 +390,19 @@ bool Compiler::compileFile(fs::path sourcePath)
 
 		switch (token.type)
 		{
-		case html:
+		case  htmlTokenType::html:
 
-			ofs <<  strToIntList(token.text) <<",Token::Type::html,0";
+			ofs << strToIntList(token.text) << ",Token::Type::html,0";
 
 			break;
-		case part:
+		case  htmlTokenType::part:
 
-			ofs << "\"" << token.text << "\",Token::Type::part,"<< pluginPoints.at(token.text);
+			ofs << strToIntList(token.text) << ",Token::Type::part," << pluginPoints.at(token.text);
+
+			break;
+		case htmlTokenType::data:
+
+			ofs << strToIntList(token.text) << ",Token::Type::data," << dataPoints.at(token.text);
 
 			break;
 		default:
@@ -340,8 +410,8 @@ bool Compiler::compileFile(fs::path sourcePath)
 			break;
 		}
 
-		ofs << " });"<<endl;
-		
+		ofs << " });" << endl;
+
 	}
 
 	ofs << "}\n};\n";
