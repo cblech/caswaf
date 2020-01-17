@@ -9,7 +9,8 @@ class Error404Controller: public Controller
 	virtual CasResponse onRequest(CasRequest request) override
 	{
 		return {
-			"404 Not found",
+			404,
+			"Not Found",
 			makeHTML(request)
 		};
 	}

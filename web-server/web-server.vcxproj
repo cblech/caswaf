@@ -104,17 +104,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\generated;D:\Programme\vs\boost\boost_1_72_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\lib\poco-master\Foundation\include;$(ProjectDir)..\lib\poco-master\Util\include;$(ProjectDir)..\lib\poco-master\Net\include;$(ProjectDir)..\generated;D:\Programme\vs\boost\boost_1_72_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BrowseInformation>true</BrowseInformation>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4838;4309;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Programme\vs\boost\boost_1_72_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PocoUtilmtd.lib;PocoNetmtd.lib;iphlpapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Jonathan\source\repos\caswaf\lib\poco-master\lib64;D:\Programme\vs\boost\boost_1_72_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>$(ProjectDir)..\tools\precompileHTML.exe $(ProjectDir)..\content $(ProjectDir)..\generated</Command>
@@ -171,6 +172,7 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Part.cpp" />
+    <ClCompile Include="PocoMainServer.cpp" />
     <ClCompile Include="Route.cpp" />
     <ClCompile Include="Routing.cpp" />
     <ClCompile Include="RoutingEngine.cpp" />
@@ -180,7 +182,6 @@
     <ClCompile Include="webserver.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\generated\StaticRecouces.h" />
     <ClInclude Include="base64\base64.h" />
     <ClInclude Include="casTypes.h" />
     <ClInclude Include="Controller.h" />

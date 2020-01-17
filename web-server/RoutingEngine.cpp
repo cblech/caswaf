@@ -3,24 +3,24 @@
 #include "starStringEquals.h"
 #include <iostream>
 
-void RoutingEngine::processRequest(webserver::http_request* request)
+void RoutingEngine::processRequest(HTTPServerRequest& req, HTTPServerResponse& resp)
 {
 
-	request->answer_ = "";
+	
 
-	Route* route = matchPathToRoute(request->path_);
+	Route* route = matchPathToRoute(req.getURI());
 
 
 	//Build request
 	CasRequest casReq;
-	casReq.path = request->path_;
-	casReq.method = request->method_;
-	casReq.params = request->params_;
+	casReq.path = req.getURI();
+	casReq.method = req.getMethod();
+	casReq.params;
 
-	casReq.accept = request->accept_;
-	casReq.accept_language = request->accept_language_;
-	casReq.accept_encoding = request->accept_encoding_;
-	casReq.user_agent = request->user_agent_;
+	casReq.accept = "";
+	casReq.accept_language = "";
+	casReq.accept_encoding = req.getTransferEncoding();
+	casReq.user_agent = req.get("User-Agent");
 
 	//Prepare response
 	CasResponse response;
@@ -34,9 +34,15 @@ void RoutingEngine::processRequest(webserver::http_request* request)
 		response = route->executeController(casReq);
 	}
 
-	request->answer_ = response.content;
-	request->status_ = response.returnCode;
-	request->content_type_ = response.contentType;
+
+	resp.setStatus((HTTPResponse::HTTPStatus)response.statusCode);
+	resp.setReason(response.statusMessage);
+	resp.setContentType(response.contentType);
+	(resp.send() << response.content).flush();
+
+	//request->answer_ = response.content;
+	//request->status_ = response.returnCode;
+	//request->content_type_ = response.contentType;
 
 }
 

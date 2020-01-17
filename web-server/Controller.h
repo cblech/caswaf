@@ -2,6 +2,9 @@
 #include <string>
 #include "casTypes.h"
 #include "Part.h"
+#include "Poco/Net/HTTPResponse.h"
+
+using Poco::Net::HTTPResponse;
 
 class Controller
 {

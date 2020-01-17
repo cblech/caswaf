@@ -1,7 +1,12 @@
 #pragma once
 #include <vector>
 #include "Route.h"
-#include "webserver.h"
+//#include "webserver.h"
+#include "Poco/Net/HTTPServerRequest.h"
+#include "Poco/Net/HTTPServerResponse.h"
+
+using Poco::Net::HTTPServerRequest;
+using Poco::Net::HTTPServerResponse;
 
 class RoutingEngine
 {
@@ -9,7 +14,7 @@ public:
 	~RoutingEngine();
 
 
-	void processRequest(webserver::http_request* r);
+	void processRequest(HTTPServerRequest& req, HTTPServerResponse& resp);
 
 protected:
 	void addRoute(Route * r); 

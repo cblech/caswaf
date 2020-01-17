@@ -3,7 +3,8 @@
 CasResponse Controller::onRequest(CasRequest request)
 {
 	return {
-		"200 OK",
+		200,
+		"OK",
 		makeHTML(request),
 		"text/html"
 	};

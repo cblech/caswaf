@@ -167,7 +167,7 @@ class Wrapper
 public:
     static void process(webserver::http_request* r)
     {
-        routing.processRequest(r);
+       // routing.processRequest(r);
     }
 
 private:

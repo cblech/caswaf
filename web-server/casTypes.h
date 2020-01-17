@@ -13,7 +13,8 @@ struct CasRequest {
 	std::string user_agent;
 };
 struct CasResponse {
-	std::string returnCode = "200 - OK";
+	int statusCode=200;
+	std::string statusMessage = "OK";
 	std::string content;
 	std::string contentType;
 };

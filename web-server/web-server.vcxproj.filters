@@ -19,9 +19,6 @@
     <Filter Include="Quelldateien\connection">
       <UniqueIdentifier>{8980d959-c2f2-4206-a88f-59b7979fc409}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\engine">
-      <UniqueIdentifier>{048ed671-6c74-4773-b79e-69399214f4ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Quelldateien\engine">
       <UniqueIdentifier>{fd292598-8d73-4d4f-94a8-7f898a670c4b}</UniqueIdentifier>
     </Filter>
@@ -37,14 +34,11 @@
     <Filter Include="Headerdateien\website\controller">
       <UniqueIdentifier>{359a99b4-b7c1-44a3-a826-6d78bec905f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\engine">
+      <UniqueIdentifier>{048ed671-6c74-4773-b79e-69399214f4ef}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Headerdateien\engine\test">
       <UniqueIdentifier>{2f4cdaca-590f-4f0d-a45f-daf60feaa7a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Quelldateien\website\views">
-      <UniqueIdentifier>{22ad923e-401b-4686-9049-999d03848ce3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\website\views">
-      <UniqueIdentifier>{401bbbe1-e6ef-4df7-8776-41730e81df29}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +73,9 @@
       <Filter>Quelldateien\engine</Filter>
     </ClCompile>
     <ClCompile Include="Part.cpp">
+      <Filter>Quelldateien\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PocoMainServer.cpp">
       <Filter>Quelldateien\engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -136,9 +133,6 @@
     </ClInclude>
     <ClInclude Include="StaticController.h">
       <Filter>Headerdateien\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\generated\StaticRecouces.h">
-      <Filter>Headerdateien\website\views</Filter>
     </ClInclude>
     <ClInclude Include="StaticRecource.h">
       <Filter>Headerdateien\engine</Filter>
