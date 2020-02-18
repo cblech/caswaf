@@ -5,3 +5,7 @@
 /.vs/
 /tools/projectBuilder.exe
 /cmake-build-debug-remote/
+/.idea
+/resources/.idea
+/resources/html/.idea
+/src/generatedold
