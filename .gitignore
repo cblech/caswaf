@@ -1,0 +1,7 @@
+/build/
+/cmake-build-debug/
+/src/generated/
+/out/
+/.vs/
+/tools/projectBuilder.exe
+/cmake-build-debug-remote/
