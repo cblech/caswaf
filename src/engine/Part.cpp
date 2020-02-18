@@ -18,6 +18,15 @@
 //	}
 //}
 
+Part::Part()
+{
+}
+
+//Part::Part(PartPlugin pp)
+//{
+//	addSubpart(pp.first, pp.second);
+//}
+
 std::string Part::generateHTML()
 {
 	std::string retVal = "";
@@ -33,7 +42,7 @@ std::string Part::generateHTML()
 		case Token::part:
 			if (containingParts.find(token.partID) != containingParts.end())
 			{
-				retVal += containingParts.at(token.partID)->generateHTML();
+				retVal += containingParts.at(token.partID).generateHTML();
 			}
 			break;
 		}
@@ -42,7 +51,8 @@ std::string Part::generateHTML()
 	return retVal;
 }
 
-void Part::addSubpart(int connectionPoint, Part* addedPart)
+Part Part::addSubpart(int connectionPoint, Part addedPart)
 {
 	containingParts.try_emplace(connectionPoint, addedPart);
+	return *this;
 }

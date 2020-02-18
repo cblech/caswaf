@@ -13,6 +13,6 @@ public:
 	virtual std::string makeHTML(CasRequest request);
 
 protected:
-	Part* partstructure;
+	Part partstructure;
 };
 

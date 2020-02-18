@@ -12,5 +12,5 @@ CasResponse Controller::onRequest(CasRequest request)
 
 std::string Controller::makeHTML(CasRequest request)
 {
-	return partstructure->generateHTML();
+	return partstructure.generateHTML();
 }

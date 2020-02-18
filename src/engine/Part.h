@@ -2,6 +2,10 @@
 #include <string>
 #include <vector>
 #include <map>
+
+class Part;
+typedef std::pair<int,Part> PartPlugin;
+
 class Part
 {
 public:
@@ -13,12 +17,14 @@ public:
 		int partID;
 	};
 
-	Part(){}
+	Part();
+	//Part(PartPlugin pp);
 	//Part(Part* part, Part* rest...);
 
 	std::string generateHTML();
 
-	void addSubpart(int connectionPoint, Part* addedPart);
+protected:
+	Part addSubpart(int connectionPoint, Part addedPart);
 
 	//enum Type{html,data};
 
@@ -27,6 +33,6 @@ public:
 protected:
 	//Type type;
 	std::vector<Token> tokenList;
-	std::map<int, Part*> containingParts;
+	std::map<int, Part> containingParts;
 };
 

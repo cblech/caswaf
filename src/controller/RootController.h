@@ -3,6 +3,7 @@
 #include "../generated/html.generated.h"
 #include "../engine/Resources.h"
 
+
 class RootController :public Controller
 {
 public:
@@ -10,8 +11,7 @@ public:
 	//virtual CasResponse makeHTML(CasRequest request) override;
 	RootController()
 	{
-		partstructure = new PartApp();
-		partstructure->addSubpart(PartApp::content, new Partroot());
+		partstructure = PartApp().addSubpart(PartApp::PartPluginPoints::content, Partroot());
 	}
 };
 

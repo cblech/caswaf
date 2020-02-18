@@ -56,6 +56,12 @@ add_executable(caswaf
         src/engine/Route.cpp
         src/engine/StaticRecource.cpp
 
+    #generated stuff
+        src/generated/html/App.html.h
+        src/generated/html/one.html.h
+        src/generated/html/root.html.h
+        src/generated/html/statusdogs.html.h
+
         src/generated/StaticRecouces.h
 
         )
