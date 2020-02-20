@@ -21,7 +21,7 @@ std::string Route::getPath()
 	return path;
 }
 
-CasResponse Route::executeController(CasRequest request)
+void Route::executeController(CasRequest& request, Poco::Net::HTTPServerResponse& response)
 {
-	return controller->onRequest(request);
+	controller->onRequest(request,response);
 }

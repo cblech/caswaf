@@ -27,14 +27,13 @@ Part::Part()
 //	addSubpart(pp.first, pp.second);
 //}
 
-std::string Part::generateHTML()
+void Part::generateHTML(std::ostream& html)
 {
-	std::string retVal = "";
 	for (auto token : tokenList)
 	{
 		switch (token.type) {
 		case Token::html:
-			retVal += token.contens;
+			html << token.contens;
 			break;
 		case Token::data:
 			//TODO
@@ -42,13 +41,12 @@ std::string Part::generateHTML()
 		case Token::part:
 			if (containingParts.find(token.partID) != containingParts.end())
 			{
-				retVal += containingParts.at(token.partID).generateHTML();
+				containingParts.at(token.partID).generateHTML(html);
 			}
 			break;
 		}
 	}
 
-	return retVal;
 }
 
 Part Part::addSubpart(int connectionPoint, Part addedPart)

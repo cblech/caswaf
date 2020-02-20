@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "Route.h"
-//#include "webserver.h"
 #include "Poco/Net/HTTPServerRequest.h"
 #include "Poco/Net/HTTPServerResponse.h"
 
@@ -23,8 +22,8 @@ protected:
 private:
 	
 	std::vector<Route*> routes;
-	Controller* error404Controller;
+	Controller* error404Controller=nullptr;
 
-	Route* matchPathToRoute(std::string path);
+	Route* matchPathToRoute(const std::string& path);
 };
 

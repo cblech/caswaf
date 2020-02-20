@@ -8,23 +8,16 @@ class StaticController: public Controller
 public:
 	StaticController(Resource resource):resource(resource){}
 
-	CasResponse onRequest(CasRequest request) override
+	void onRequest(CasRequest& request, Poco::Net::HTTPServerResponse& response) override
 	{
-		CasResponse cr = Controller::onRequest(request);
-		cr.contentType = resource.content_type;
-		return cr;
+		response.setStatusAndReason(HTTPResponse::HTTP_OK, "OK");
+		response.setContentType(resource.content_type);
+		response.sendBuffer(resource.data.data(), resource.data.size());
 	}
 
-	std::string makeHTML(CasRequest request) override
+	void makeHTML(CasRequest& request, std::ostream& html) override
 	{
-		std::stringstream ss;
-
-		for (int i = 0; i < resource.data_size;i++)
-		{
-			ss << resource.data[i];
-		}
-
-		return ss.str();
+		//html << resource.data.data();
 	}
 private:
 	Resource resource;

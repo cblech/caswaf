@@ -12,7 +12,7 @@ public:
 	~Route();
 
 	std::string getPath();
-	CasResponse executeController(CasRequest request);
+	void executeController(CasRequest& request, Poco::Net::HTTPServerResponse& response);
 
 private:
 	std::string path;

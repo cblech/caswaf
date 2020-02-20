@@ -225,6 +225,9 @@ void Compiler::compileStaticFile(path p, std::iostream &stcInitialStream, std::i
             case str2int(".css"):
                 stcInitialStream << "text/css";
                 break;
+        	case str2int(".txt"):
+                stcInitialStream << "text/plain";
+                break;
             default:
                 warning << "Static Compiler: " << p.filename().string()
                         << " Unknown File extention. Defaulting to text/plain";
@@ -233,8 +236,6 @@ void Compiler::compileStaticFile(path p, std::iostream &stcInitialStream, std::i
         }
 
         stcInitialStream << "\");" << endl;
-
-        //return ss.str();
 
         stcNameStream << "Resource " << ssSymbol.str() << ";" << "//" << p.filename().string() << endl;
 
@@ -248,15 +249,12 @@ void Compiler::compileStaticFile(path p, std::iostream &stcInitialStream, std::i
             compileStaticFile(*itr, stcInitialStream, stcNameStream);
         }
 
-        //return ss.str();
     }
 
-    //return "";
 }
 
 void Compiler::htmlNodesToHtmlToken(const HTMLNodeList &nodes, list<htmlToken> &tokens, string &tokenWrite,
-                                    std::map<std::string, int> &pluginPoints, int &pluginCount,
-                                    std::map<std::string, int> &dataPoints, int &dataCount) {
+                                    std::map<std::string, int> &pluginPoints, int &pluginCount) {
 
     for (auto node : nodes) {
         //Handle Part Tags
@@ -277,6 +275,7 @@ void Compiler::htmlNodesToHtmlToken(const HTMLNodeList &nodes, list<htmlToken> &
             tokenWrite += node.getClosingTag();
 
         }
+    	/*
             //Handle Data Tags
         else if (node.getTagName() == "data") {
             tokenWrite += node.getOpeningTag();
@@ -293,7 +292,7 @@ void Compiler::htmlNodesToHtmlToken(const HTMLNodeList &nodes, list<htmlToken> &
             }
 
             tokenWrite += node.getClosingTag();
-        }
+        }*/
             //Handle Text Nodes
         else if (node.isTextNode()) {
             tokenWrite += node.getText();
@@ -305,8 +304,7 @@ void Compiler::htmlNodesToHtmlToken(const HTMLNodeList &nodes, list<htmlToken> &
             //Handle All Other Tags
         else {
             tokenWrite += node.getOpeningTag();
-            htmlNodesToHtmlToken(node.getChildrenIncludingText(), tokens, tokenWrite, pluginPoints, pluginCount,
-                                 dataPoints, dataCount);
+            htmlNodesToHtmlToken(node.getChildrenIncludingText(), tokens, tokenWrite, pluginPoints, pluginCount);
             tokenWrite += node.getClosingTag();
         }
     }
@@ -364,11 +362,11 @@ bool Compiler::compileFile(fs::path sourcePath) {
     int pluginCount = 0;
 
     //data Points
-    std::map<std::string, int> dataPoints;
-    int dataCount = 0;
+    //std::map<std::string, int> dataPoints;
+    //int dataCount = 0;
 
     //Tokenize
-    htmlNodesToHtmlToken(HTMLPart, tokens, tokenWrite, pluginPoints, pluginCount, dataPoints, dataCount);
+    htmlNodesToHtmlToken(HTMLPart, tokens, tokenWrite, pluginPoints, pluginCount);
 
     //create last Token
     tokens.push_back(htmlToken{htmlTokenType::html, tokenWrite});
@@ -398,12 +396,14 @@ bool Compiler::compileFile(fs::path sourcePath) {
     }
     ofs << "};" << endl;
 
+	/*
     ofs << "enum class DataPluginPoints{" << endl;
     for (auto pp : dataPoints) {
         ofs << pp.first << " = " << pp.second << ((pp != *(--dataPoints.end())) ? "," : "") << endl;
     }
     ofs << "};" << endl;
-
+    */
+	
     /*
     for (auto dp : dataPoints) {
         ofs << "static const int " << dp.first << " = " << dp.second << ";" << endl;
@@ -426,11 +426,13 @@ bool Compiler::compileFile(fs::path sourcePath) {
                 ofs << strToIntList(token.text) << ",Token::Type::part," << pluginPoints.at(token.text);
 
                 break;
+        	/*
             case htmlTokenType::data:
 
                 ofs << strToIntList(token.text) << ",Token::Type::data," << dataPoints.at(token.text);
 
                 break;
+                */
             default:
                 ofs << "\"\",Token::Type::html,0";
                 break;
@@ -440,7 +442,7 @@ bool Compiler::compileFile(fs::path sourcePath) {
 
     }
 
-    ofs << "}\n"<<className<<" addSubpart("<< className <<"::PartPluginPoints connectionPoint, Part addedPart){\nPart::addSubpart(static_cast<int>(connectionPoint), addedPart);\nreturn *this;\n};"<<endl;
+    ofs << "}\n"<<className<<" addSubpart("<< className <<"::PartPluginPoints connectionPoint, const Part & addedPart){\nPart::addSubpart(static_cast<int>(connectionPoint), addedPart);\nreturn *this;\n};"<<endl;
 
     ofs << "};\n";
 

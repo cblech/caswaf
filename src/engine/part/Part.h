@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <iostream>
 
 class Part;
 typedef std::pair<int,Part> PartPlugin;
@@ -18,10 +19,8 @@ public:
 	};
 
 	Part();
-	//Part(PartPlugin pp);
-	//Part(Part* part, Part* rest...);
 
-	std::string generateHTML();
+	void generateHTML(std::ostream& html);
 
 protected:
 	Part addSubpart(int connectionPoint, Part addedPart);

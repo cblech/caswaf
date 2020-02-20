@@ -1,12 +1,9 @@
 #include "RoutingEngine.h"
-//#include "webserver.h"
 #include "starStringEquals.h"
 #include <iostream>
 
 void RoutingEngine::processRequest(HTTPServerRequest& req, HTTPServerResponse& resp)
 {
-
-	
 
 	Route* route = matchPathToRoute(req.getURI());
 
@@ -15,7 +12,6 @@ void RoutingEngine::processRequest(HTTPServerRequest& req, HTTPServerResponse& r
 	CasRequest casReq;
 	casReq.path = req.getURI();
 	casReq.method = req.getMethod();
-	casReq.params;
 
 	casReq.accept = "";
 	casReq.accept_language = "";
@@ -23,23 +19,27 @@ void RoutingEngine::processRequest(HTTPServerRequest& req, HTTPServerResponse& r
 	casReq.user_agent = req.get("User-Agent");
 
 	//Prepare response
-	CasResponse response;
+	//CasResponse response;
+	//response.content = &resp.send();
 
 	if (route == nullptr)
 	{
-		response = error404Controller->onRequest(casReq);
+		error404Controller->onRequest(casReq, resp);
 	}
 	else
 	{
-		response = route->executeController(casReq);
+		route->executeController(casReq, resp);
 	}
 
-
+	//resp.send().flush();
+	
+	/*
 	resp.setStatus((HTTPResponse::HTTPStatus)response.statusCode);
 	resp.setReason(response.statusMessage);
 	resp.setContentType(response.contentType);
-	(resp.send() << response.content).flush();
-
+	resp.send().flush();
+	*/
+	
 	//request->answer_ = response.content;
 	//request->status_ = response.returnCode;
 	//request->content_type_ = response.contentType;
@@ -63,7 +63,7 @@ void RoutingEngine::setError404Controller(Controller* c)
 	error404Controller = c;
 }
 
-Route* RoutingEngine::matchPathToRoute(std::string path)
+Route* RoutingEngine::matchPathToRoute(const std::string& path)
 {
 	for (Route* rt : routes) {
 

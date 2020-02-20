@@ -30,18 +30,30 @@ target_link_libraries(projectBuilder ${CONAN_LIBS})
 #    COMMENT "Copy projectBuilder to 'tools' directory"
 #)
 
+file(GLOB_RECURSE SUB_SOURCES_CONTROLLER "${CMAKE_CURRENT_SOURCE_DIR}/src/webserver/controller/*.cpp")
+file(GLOB_RECURSE SUB_SOURCES_GENERATED "${CMAKE_CURRENT_SOURCE_DIR}/src/generated/*.cpp" )
+
+file(GLOB_RECURSE SUB_HEADER_CONTROLLER "${CMAKE_CURRENT_SOURCE_DIR}/src/webserver/controller/*.h")
+file(GLOB_RECURSE SUB_HEADER_GENERATED "${CMAKE_CURRENT_SOURCE_DIR}/src/generated/*.h")
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+
 
 
 add_executable(caswaf 
 
     src/PocoMainServer.cpp
 
+        ${SUB_SOURCES_GENERATED}
+        ${SUB_SOURCES_CONTROLLER}
+        ${SUB_HEADER_CONTROLLER}
+        ${SUB_HEADER_GENERATED}
 
     #Engine headers
         src/engine/Routing.h
         src/engine/RoutingEngine.h
         src/engine/Controller.h
-        src/engine/Part.h
+        src/engine/part/Part.h
         src/engine/Route.h
         src/engine/starStringEquals.h
         src/engine/StaticController.h
@@ -51,18 +63,10 @@ add_executable(caswaf
     #Engine sources
         src/engine/Routing.cpp
         src/engine/Controller.cpp
-        src/engine/Part.cpp
+        src/engine/part/Part.cpp
         src/engine/RoutingEngine.cpp
         src/engine/Route.cpp
         src/engine/StaticRecource.cpp
-
-    #generated stuff
-        src/generated/html/App.html.h
-        src/generated/html/one.html.h
-        src/generated/html/root.html.h
-        src/generated/html/statusdogs.html.h
-
-        src/generated/StaticRecouces.h
 
         )
 target_link_libraries(caswaf ${CONAN_LIBS})

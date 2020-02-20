@@ -11,7 +11,11 @@ public:
 	//virtual CasResponse makeHTML(CasRequest request) override;
 	RootController()
 	{
-		partstructure = PartApp().addSubpart(PartApp::PartPluginPoints::content, Partroot());
+		partstructure = PartApp()
+			.addSubpart(PartApp::PartPluginPoints::content, Partroot());
+
+		
 	}
+
 };
 
