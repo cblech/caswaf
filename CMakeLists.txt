@@ -53,20 +53,22 @@ add_executable(caswaf
         src/engine/Routing.h
         src/engine/RoutingEngine.h
         src/engine/Controller.h
-        src/engine/part/Part.h
         src/engine/Route.h
         src/engine/starStringEquals.h
         src/engine/StaticController.h
         src/engine/StaticRecource.h
         src/engine/casTypes.h
+        src/engine/part/Part.h
+        src/engine/part/StaticPart.h
 
     #Engine sources
         src/engine/Routing.cpp
         src/engine/Controller.cpp
-        src/engine/part/Part.cpp
         src/engine/RoutingEngine.cpp
         src/engine/Route.cpp
         src/engine/StaticRecource.cpp
+        src/engine/part/Part.cpp
+        src/engine/part/StaticPart.cpp
 
         )
 target_link_libraries(caswaf ${CONAN_LIBS})

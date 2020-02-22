@@ -49,7 +49,7 @@ public:
 class MyServerApp : public ServerApplication
 {
 protected:
-    int main(const vector<string>&)
+    int main(const vector<string>& args)
     {
         HTTPServer s(new MyRequestHandlerFactory, ServerSocket(80), new HTTPServerParams);
 

@@ -1,12 +1,11 @@
 #include "Controller.h"
 #include <iostream>
 
-void Controller::onRequest(CasRequest& request, Poco::Net::HTTPServerResponse& response)
+void Controller::onRequest(CasRequest& request, HTTPServerResponse& response)
 {
-	response.setStatusAndReason(HTTPResponse::HTTP_OK,"OK");
+	response.setStatusAndReason(Poco::Net::HTTPResponse::HTTP_OK,"OK");
 	response.setContentType("text/html");
-	makeHTML(request, response.send());
-	
+	partStructure.getRootPart()->makeHtml(response.send());
 	/*
 	return {
 		200,
@@ -16,7 +15,18 @@ void Controller::onRequest(CasRequest& request, Poco::Net::HTTPServerResponse& r
 	};*/
 }
 
-void Controller::makeHTML(CasRequest& request, std::ostream& html)
+void Controller::PartStructure::setup(Part * p)
 {
-	partstructure.generateHTML(html);
+	rootPart = p;
+}
+
+Part * Controller::PartStructure::getRootPart()
+{
+	return rootPart;
+}
+
+Controller::PartStructure& Controller::PartStructure::operator=(Part * p)
+{
+	setup(p);
+	return *this;
 }

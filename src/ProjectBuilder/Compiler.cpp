@@ -329,9 +329,9 @@ bool Compiler::compileFile(fs::path sourcePath) {
 
     //debug
     info << "Compiling: " << sourcePath << " into " << destPath;
-    info << "sourcePath: " << sourcePath << " resoucesPath " << resoucesPath;
-    info << "lexically_relative: " << sourcePath.lexically_relative(resoucesPath);
-    info << "";
+    //info << "sourcePath: " << sourcePath << " resoucesPath " << resoucesPath;
+    //info << "lexically_relative: " << sourcePath.lexically_relative(resoucesPath);
+    //info << "";
 
     //input stream of the .html file (source)
     ifstream ifs(sourcePath.string());
@@ -388,13 +388,13 @@ bool Compiler::compileFile(fs::path sourcePath) {
     ofs << endl;
 
 
-    ofs << "#pragma once\n#include \"../engine/Part.h\"\n\nclass " << className << " :public Part\n{\npublic:\n";
+    ofs << "#pragma once\n#include \"engine/part/StaticPart.h\"\n\nclass " << className << " :public StaticPart\n{\npublic:\n";
 
-    ofs << "enum class PartPluginPoints{" << endl;
+    ofs << "\tenum class PartPluginPoints{" << endl;
     for (auto pp : pluginPoints) {
-        ofs << pp.first << " = " << pp.second << ((pp!=*(--pluginPoints.end()))?",":"") << endl;
+        ofs <<"\t\t"<< pp.first << " = " << pp.second << ((pp!=*(--pluginPoints.end()))?",":"") << endl;
     }
-    ofs << "};" << endl;
+    ofs << "\t};" << endl;
 
 	/*
     ofs << "enum class DataPluginPoints{" << endl;
@@ -410,10 +410,10 @@ bool Compiler::compileFile(fs::path sourcePath) {
     }
     */
 
-    ofs << className << "()\n{\n";
+    ofs <<"\t"<< className << "()\n\t{\n";
 
     for (htmlToken token : tokens) {
-        ofs << "tokenList.push_back({ ";
+        ofs << "\t\ttokenList.push_back({ ";
 
         switch (token.type) {
             case htmlTokenType::html:
@@ -438,11 +438,11 @@ bool Compiler::compileFile(fs::path sourcePath) {
                 break;
         }
 
-        ofs << " });" << endl;
+        ofs << "});" << endl;
 
     }
 
-    ofs << "}\n"<<className<<" addSubpart("<< className <<"::PartPluginPoints connectionPoint, const Part & addedPart){\nPart::addSubpart(static_cast<int>(connectionPoint), addedPart);\nreturn *this;\n};"<<endl;
+    ofs << "\t}\n\t"<<className<<" addSubpart("<< className <<"::PartPluginPoints connectionPoint,  Part * addedPart){\n\t\tStaticPart::addSubpart(static_cast<int>(connectionPoint), addedPart);\n\t\treturn *this;\n\t};"<<endl;
 
     ofs << "};\n";
 

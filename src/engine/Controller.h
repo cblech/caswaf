@@ -1,18 +1,29 @@
 #pragma once
 #include <string>
 #include "casTypes.h"
+#include "generated/html/one.html.h"
 #include "part/Part.h"
 #include "Poco/Net/HTTPResponse.h"
 
-using Poco::Net::HTTPResponse;
+using Poco::Net::HTTPServerResponse;
 
 class Controller
 {
 public:
-	virtual void onRequest(CasRequest& request, Poco::Net::HTTPServerResponse& response);
-	virtual void makeHTML(CasRequest& request, std::ostream& html);
+	virtual void onRequest(CasRequest& request, HTTPServerResponse& response);
 
 protected:
-	Part partstructure;
-};
+	class PartStructure
+	{
+	public:
+		
+		void setup(Part * p);
+		Part * getRootPart();
 
+		PartStructure& operator=(Part* p);
+		
+	private:
+		Part * rootPart;
+	};
+	PartStructure partStructure;
+};

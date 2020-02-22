@@ -10,15 +10,11 @@ public:
 
 	void onRequest(CasRequest& request, Poco::Net::HTTPServerResponse& response) override
 	{
-		response.setStatusAndReason(HTTPResponse::HTTP_OK, "OK");
+		response.setStatusAndReason(Poco::Net::HTTPResponse::HTTP_OK, "OK");
 		response.setContentType(resource.content_type);
 		response.sendBuffer(resource.data.data(), resource.data.size());
 	}
 
-	void makeHTML(CasRequest& request, std::ostream& html) override
-	{
-		//html << resource.data.data();
-	}
 private:
 	Resource resource;
 };
