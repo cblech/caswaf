@@ -21,6 +21,8 @@ class MyRequestHandler : public HTTPRequestHandler
 public:
     virtual void handleRequest(HTTPServerRequest& req, HTTPServerResponse& resp)
     {
+        
+    	
         routing.processRequest(req, resp);
 
         //resp.send()<<"Hello CMake caswaf";

@@ -14,6 +14,7 @@ public:
 		root->addSubpart(PartApp::PartPluginPoints::content, new Partone());
 
 		partStructure = root;
+
 		
 	}
 };

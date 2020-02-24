@@ -54,6 +54,7 @@ add_executable(caswaf
         src/engine/RoutingEngine.h
         src/engine/Controller.h
         src/engine/Route.h
+        src/engine/Resources.h
         src/engine/starStringEquals.h
         src/engine/StaticController.h
         src/engine/StaticRecource.h

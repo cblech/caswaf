@@ -8,6 +8,7 @@ Routing::Routing()
     setError404Controller(new Error404Controller());
 
     //static Routes
+	
     addRoute(new Route("/style.css", R.Static.style_css));
 
     addRoute(new Route("/bootstrap.css", R.Static.bootstrap_css));

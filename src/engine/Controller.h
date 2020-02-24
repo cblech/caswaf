@@ -23,7 +23,7 @@ protected:
 		PartStructure& operator=(Part* p);
 		
 	private:
-		Part * rootPart;
+		Part * rootPart = nullptr;
 	};
 	PartStructure partStructure;
 };

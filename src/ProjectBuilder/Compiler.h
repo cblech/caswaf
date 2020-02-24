@@ -23,7 +23,10 @@ public:
 	Compiler(path resourcesPath, path generatedPath);
 
 	void actionCompileHTML();
+	void actionCompileSingleHTML(path pathToFile);
 	void actionCompileStatic();
+	void actionCompileSingleStatic(path pathToFile);
+	void actionCompileConfig();
 
 private:
 	path generatedPath;
@@ -32,13 +35,13 @@ private:
 
 
 	//Compile HTML Resources to .h files
-	bool compilePath(path p);
-	bool compileFile(path p);
+	bool compileHtmlFolder(path p);
+	bool compileHtmlFile(path p);
 
 	void htmlNodesToHtmlToken(const HTMLNodeList & nodes, std::list<htmlToken> & tokens, string & tokenWrite, std::map<std::string, int> &  pluginPoints, int & pluginCount);
 
 	//Compile Static Resources to .h files
-	bool compileStatic(path p);
+	bool compileStaticFolder(path p);
 	void compileStaticFile(path p, std::iostream & stcInitialStream, std::iostream & stcNameStream, bool writeDataIntoGenerated = false);
 };
 

@@ -14,6 +14,7 @@ public:
 
 		PartApp* pa = new PartApp();
 		pa->addSubpart(PartApp::PartPluginPoints::content,new Partroot());;
+
 		
 
 		partStructure = pa;

@@ -8,6 +8,9 @@
 
 using namespace std;
 
+#define THROW_EXCEPTION_FEATURE_NOT_IMPLEMENTED throw exception("This feature is not implemented yet");
+
+
 inline std::string strToIntList(std::string s) {
     stringstream retVal;
     retVal << "{";
@@ -32,13 +35,22 @@ Compiler::Compiler(path resourcesPath, path generatedPath) :
         resoucesPath(resourcesPath),
         generatedPath(generatedPath) {
 
-    //system("echo %cd%");
+	if(!fs::is_directory(resourcesPath))
+	{
+        throw std::exception("Resources path does not exist");
+	}
+
+	if(!fs::is_directory(generatedPath))
+	{
+        info << "Generated path does not exist. Making new one";
+        fs::create_directories(generatedPath);
+	}
 
 }
 
 
 void Compiler::actionCompileHTML() {
-    compilePath(resoucesPath / "html");
+    compileHtmlFolder(resoucesPath / "html");
 
     ofstream ofs((generatedPath / "html.generated.h").string());
 
@@ -61,18 +73,45 @@ void Compiler::actionCompileHTML() {
 }
 
 void Compiler::actionCompileStatic() {
-    compileStatic(resoucesPath / "static");
+    compileStaticFolder(resoucesPath / "static");
 
 }
 
 
-bool Compiler::compilePath(fs::path p) {
+void Compiler::actionCompileSingleHTML(path pathToFile)
+{
+	THROW_EXCEPTION_FEATURE_NOT_IMPLEMENTED	
+	if(!fs::is_regular_file(resoucesPath / pathToFile))
+	{
+        throw std::exception(("File " + (resoucesPath / pathToFile).string() + " doesn't exist or it isn't a file").data());
+	}
+	
+    compileHtmlFile(resoucesPath / pathToFile);
+}
+
+
+void Compiler::actionCompileSingleStatic(path pathToFile)
+{
+	THROW_EXCEPTION_FEATURE_NOT_IMPLEMENTED
+    if (!fs::is_regular_file(resoucesPath / pathToFile))
+    {
+        throw std::exception(("File " + (resoucesPath / pathToFile).string() + " doesn't exist or it isn't a file").data());
+    }
+    compileStaticFolder(resoucesPath / pathToFile);
+}
+
+void Compiler::actionCompileConfig()
+{
+}
+
+
+bool Compiler::compileHtmlFolder(fs::path p) {
     try {
 
         if (fs::is_regular_file(p)) {
             if (p.extension() == ".html") {
 
-                if (!compileFile(p))
+                if (!compileHtmlFile(p))
                     return false;
             }
         } else {
@@ -80,7 +119,7 @@ bool Compiler::compilePath(fs::path p) {
 
             // cycle through the directory
             for (fs::directory_iterator itr(p); itr != end_itr; ++itr) {
-                if (!compilePath(itr->path()))
+                if (!compileHtmlFolder(itr->path()))
                     return false;
             }
         }
@@ -97,7 +136,7 @@ bool Compiler::compilePath(fs::path p) {
 }
 
 
-bool Compiler::compileStatic(path p) {
+bool Compiler::compileStaticFolder(path p) {
     try {
 
         std::stringstream stcInitialStream;
@@ -124,7 +163,7 @@ bool Compiler::compileStatic(path p) {
         ofs << endl;
 
 
-        ofs << "class AllResources \n{\npublic:\nclass AllStatic \n{\npublic:\nAllStatic() \n{\n" << endl;
+        ofs << "class AllStatic \n{\npublic:\nAllStatic() \n{\n" << endl;
 
         ofs << stcInitialStream.str() << endl;
 
@@ -132,7 +171,7 @@ bool Compiler::compileStatic(path p) {
 
         ofs << stcNameStream.str() << endl;
 
-        ofs << "};\nAllStatic Static;\n};" << endl;
+        ofs << "};" << endl;
     }
     catch (std::exception &e) {
         error << "an error ocured: " << e.what();
@@ -313,7 +352,7 @@ void Compiler::htmlNodesToHtmlToken(const HTMLNodeList &nodes, list<htmlToken> &
 }
 
 
-bool Compiler::compileFile(fs::path sourcePath) {
+bool Compiler::compileHtmlFile(fs::path sourcePath) {
     //define the Path for the .html.h file (Target)
     path destPath = (generatedPath / sourcePath.lexically_relative(resoucesPath)).string() + ".h";
 
