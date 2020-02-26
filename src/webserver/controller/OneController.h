@@ -10,12 +10,10 @@ public:
 	//virtual CasResponse makeHTML(CasRequest request) override;
 	OneController()
 	{
-		auto root = new PartApp();
-		root->addSubpart(PartApp::PartPluginPoints::content, new Partone());
-
-		partStructure = root;
-
-		
+		rootPart = R::Parts::PartApp()
+			.addSubpart(R::Parts::PartApp::PartPluginPoints::content, R::Parts::Partone()
+				.addSubpart(R::Parts::Partone::PartPluginPoints::p1, R::Parts::Partroot().make())
+				.make())
+			.make();
 	}
 };
-

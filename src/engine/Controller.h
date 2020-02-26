@@ -13,7 +13,7 @@ public:
 	virtual void onRequest(CasRequest& request, HTTPServerResponse& response);
 
 protected:
-	class PartStructure
+	/*class PartStructure
 	{
 	public:
 		
@@ -24,6 +24,6 @@ protected:
 		
 	private:
 		Part * rootPart = nullptr;
-	};
-	PartStructure partStructure;
+	};*/
+	Part * rootPart;
 };

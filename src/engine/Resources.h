@@ -1,18 +1,25 @@
 #pragma once
 #include "../generated/StaticRecouces.h"
+#include "generated/html.generated.h"
 
 /**
  * \brief Contains all resources
  */
 
-class AllResources
+//class AllResources
+//{
+//public:
+//
+//	/**
+//	 * \brief Contains all static resources
+//	 */
+//	
+//};
+
+//extern AllResources R;
+
+// ReSharper disable once CppInconsistentNaming
+namespace R
 {
-public:
-
-	/**
-	 * \brief Contains all static resources
-	 */
-	AllStatic Static;
-};
-
-extern AllResources R;
+	inline AllStatic Static;
+}

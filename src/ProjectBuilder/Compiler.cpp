@@ -427,7 +427,7 @@ bool Compiler::compileHtmlFile(fs::path sourcePath) {
     ofs << endl;
 
 
-    ofs << "#pragma once\n#include \"engine/part/StaticPart.h\"\n\nclass " << className << " :public StaticPart\n{\npublic:\n";
+    ofs << "#pragma once\n#include \"engine/part/StaticPart.h\"\n\nnamespace R::Parts{\n\nclass " << className << " :public StaticPart\n{\npublic:\n";
 
     ofs << "\tenum class PartPluginPoints{" << endl;
     for (auto pp : pluginPoints) {
@@ -483,7 +483,9 @@ bool Compiler::compileHtmlFile(fs::path sourcePath) {
 
     ofs << "\t}\n\t"<<className<<" addSubpart("<< className <<"::PartPluginPoints connectionPoint,  Part * addedPart){\n\t\tStaticPart::addSubpart(static_cast<int>(connectionPoint), addedPart);\n\t\treturn *this;\n\t};"<<endl;
 
-    ofs << "};\n";
+    ofs << "\t" << className << " * make()\n\t{\n\t\treturn new " << className << "(*this);\n\t}\n";
+	
+    ofs << "};\n}\n";
 
     ofs.close();
 

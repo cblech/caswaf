@@ -40,7 +40,7 @@ private:
 };
 
 
-AllResources R;
+//AllResources R;
 Routing MyRequestHandler::routing;
 
 

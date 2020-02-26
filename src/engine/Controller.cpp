@@ -5,7 +5,7 @@ void Controller::onRequest(CasRequest& request, HTTPServerResponse& response)
 {
 	response.setStatusAndReason(Poco::Net::HTTPResponse::HTTP_OK,"OK");
 	response.setContentType("text/html");
-	partStructure.getRootPart()->makeHtml(response.send());
+	rootPart->makeHtml(response.send());
 	/*
 	return {
 		200,
@@ -14,7 +14,7 @@ void Controller::onRequest(CasRequest& request, HTTPServerResponse& response)
 		"text/html"
 	};*/
 }
-
+/*
 void Controller::PartStructure::setup(Part * p)
 {
 	rootPart = p;
@@ -30,3 +30,4 @@ Controller::PartStructure& Controller::PartStructure::operator=(Part * p)
 	setup(p);
 	return *this;
 }
+*/

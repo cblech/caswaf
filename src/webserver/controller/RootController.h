@@ -11,14 +11,9 @@ public:
 	//virtual CasResponse makeHTML(CasRequest request) override;
 	RootController()
 	{
-
-		PartApp* pa = new PartApp();
-		pa->addSubpart(PartApp::PartPluginPoints::content,new Partroot());;
-
-		
-
-		partStructure = pa;
-
+		rootPart = R::Parts::PartApp()
+			.addSubpart(R::Parts::PartApp::PartPluginPoints::content, R::Parts::Partroot().make())
+			.make();
 	}
 
 };
