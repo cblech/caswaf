@@ -3,9 +3,13 @@
 
 namespace R::Part
 {
-	class UsernamePart :public DataPart
+	class PathPart :public DataPart
 	{
 	public:
+		struct Data
+		{
+			std::string path;
+		};
 		void makeHtml(std::ostream& html) override;
 		Part* make() override;
 	};

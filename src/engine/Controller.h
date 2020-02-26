@@ -15,17 +15,5 @@ public:
 	virtual void handlePartRequest(CasRequest& request, HTTPServerResponse& response);
 
 protected:
-	/*class PartStructure
-	{
-	public:
-		
-		void setup(Part * p);
-		Part * getRootPart();
-
-		PartStructure& operator=(Part* p);
-		
-	private:
-		Part * rootPart = nullptr;
-	};*/
 	Part * rootPart = nullptr;
 };

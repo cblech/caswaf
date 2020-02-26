@@ -1,6 +1,7 @@
 #include "Routing.h"
-#include "../webserver/controller/AllController.h"
 #include "../webserver/controller/OneController.h"
+#include "controller/Error404Controller.h"
+#include "controller/RootController.h"
 #include "Resources.h"
 
 Routing::Routing()
