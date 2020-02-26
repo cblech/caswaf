@@ -5,14 +5,14 @@
 #include <iostream>
 
 class Part;
-typedef std::pair<int,Part *> PartPlugin;
+typedef std::pair<int, Part*> PartPlugin;
 
 class Part
 {
 public:
 	struct Token
 	{
-		enum Type{html,part};
+		enum Type { html, part };
 		std::string contens;
 		Type type;
 		int partID;
@@ -20,8 +20,9 @@ public:
 
 	Part();
 
-	virtual void makeHtml(std::ostream& html)=0;
-	virtual std::vector<Part*> getAllParts()=0;
+	virtual void makeHtml(std::ostream& html) = 0;
+	virtual std::vector<Part*> getAllParts() = 0;
+	virtual uint32_t getUniqueIdentifier() = 0;
 
 protected:
 

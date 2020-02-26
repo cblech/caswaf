@@ -481,6 +481,8 @@ bool Compiler::compileHtmlFile(fs::path sourcePath) {
 
     }
 
+    ofs << "\t\tpartId = "<< partCount++ <<";\n";
+
     ofs << "\t}\n\t"<<className<<" addSubpart("<< className <<"::PartPluginPoints connectionPoint,  Part * addedPart){\n\t\tStaticPart::addSubpart(static_cast<int>(connectionPoint), addedPart);\n\t\treturn *this;\n\t}"<<endl;
 
     ofs << "\t" << className << " * make()\n\t{\n\t\treturn new " << className << "(*this);\n\t}\n";

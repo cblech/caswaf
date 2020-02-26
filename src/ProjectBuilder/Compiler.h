@@ -33,6 +33,7 @@ private:
 	path resoucesPath;
 	std::list<path> allGenerated; //lists all HTML Resourcepaths
 
+	uint16_t partCount = 1;
 
 	//Compile HTML Resources to .h files
 	bool compileHtmlFolder(path p);

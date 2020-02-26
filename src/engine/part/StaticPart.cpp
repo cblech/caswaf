@@ -1,10 +1,9 @@
 #include "StaticPart.h"
 
 
-StaticPart::StaticPart(std::vector<PartPlugin> pps)
-{
-	
-}
+//StaticPart::StaticPart(std::vector<PartPlugin> pps)
+//{
+//}
 
 StaticPart StaticPart::addSubpart(int connectionPoint, Part* addedPart)
 {
@@ -42,4 +41,9 @@ std::vector<Part*> StaticPart::getAllParts()
 
 	retVal.push_back(this);
 	return retVal;
+}
+
+uint32_t StaticPart::getUniqueIdentifier()
+{
+	return uint32_t(partId) << 16;
 }
