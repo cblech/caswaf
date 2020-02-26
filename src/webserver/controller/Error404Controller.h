@@ -6,12 +6,17 @@
 
 class Error404Controller: public Controller
 {
+public:
+	Error404Controller()
+	{
+		rootPart = R::Part::Partstatusdogs().make();
+	}
+	
 	// Inherited via Controller
-	virtual void onRequest(CasRequest& request, Poco::Net::HTTPServerResponse& response) override
+	void onRequest(CasRequest& request, Poco::Net::HTTPServerResponse& response) override
 	{
 		response.setStatusAndReason(Poco::Net::HTTPResponse::HTTP_NOT_FOUND, "Not Found");
-		response.setContentType("text/html");
-		response.send() << "404 - Site not found";
+		handlePartRequest(request, response);
 	}
 };
 
