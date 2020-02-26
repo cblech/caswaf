@@ -1,5 +1,5 @@
-Hi and welcome to the reposetory of
+Hi and welcome to the repository of
 
 # CASWAF
 
-This project is in an early development state.
+This project is in an early development state. Please visit the Wiki for further information. 
