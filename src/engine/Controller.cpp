@@ -3,17 +3,16 @@
 
 void Controller::onRequest(CasRequest& request, HTTPServerResponse& response)
 {
-	response.setStatusAndReason(Poco::Net::HTTPResponse::HTTP_OK,"OK");
+	handlePartRequest(request, response);
+}
+
+void Controller::handlePartRequest(CasRequest& request, HTTPServerResponse& response)
+{
+	//response.setStatusAndReason(Poco::Net::HTTPResponse::HTTP_OK,"OK");
 	response.setContentType("text/html");
 	rootPart->makeHtml(response.send());
-	/*
-	return {
-		200,
-		"OK",
-		makeHTML(request),
-		"text/html"
-	};*/
 }
+
 /*
 void Controller::PartStructure::setup(Part * p)
 {

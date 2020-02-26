@@ -10,9 +10,9 @@ public:
 	//virtual CasResponse makeHTML(CasRequest request) override;
 	OneController()
 	{
-		rootPart = R::Parts::PartApp()
-			.addSubpart(R::Parts::PartApp::PartPluginPoints::content, R::Parts::Partone()
-				.addSubpart(R::Parts::Partone::PartPluginPoints::p1, R::Parts::Partroot().make())
+		rootPart = R::Part::PartApp()
+			.addSubpart(R::Part::PartApp::PartPluginPoints::content, R::Part::Partone()
+				.addSubpart(R::Part::Partone::PartPluginPoints::p1, R::Part::Partroot().make())
 				.make())
 			.make();
 	}

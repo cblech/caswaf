@@ -12,6 +12,8 @@ class Controller
 public:
 	virtual void onRequest(CasRequest& request, HTTPServerResponse& response);
 
+	virtual void handlePartRequest(CasRequest& request, HTTPServerResponse& response);
+
 protected:
 	/*class PartStructure
 	{
@@ -25,5 +27,5 @@ protected:
 	private:
 		Part * rootPart = nullptr;
 	};*/
-	Part * rootPart;
+	Part * rootPart = nullptr;
 };

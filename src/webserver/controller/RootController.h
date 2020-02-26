@@ -1,6 +1,5 @@
 #pragma once
 #include "Controller.h"
-#include "../generated/html.generated.h"
 #include "../engine/Resources.h"
 
 
@@ -11,10 +10,10 @@ public:
 	//virtual CasResponse makeHTML(CasRequest request) override;
 	RootController()
 	{
-		rootPart = R::Parts::PartApp()
-			.addSubpart(R::Parts::PartApp::PartPluginPoints::content, R::Parts::Partroot().make())
+		rootPart = R::Part::PartApp()
+			.addSubpart(R::Part::PartApp::PartPluginPoints::content, R::Part::Partroot().make())
 			.make();
-	}
 
+	}
 };
 
