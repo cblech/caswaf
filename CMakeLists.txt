@@ -31,10 +31,13 @@ target_link_libraries(projectBuilder ${CONAN_LIBS})
 #)
 
 file(GLOB_RECURSE SUB_SOURCES_CONTROLLER "${CMAKE_CURRENT_SOURCE_DIR}/src/webserver/controller/*.cpp")
-file(GLOB_RECURSE SUB_SOURCES_GENERATED "${CMAKE_CURRENT_SOURCE_DIR}/src/generated/*.cpp" )
-
 file(GLOB_RECURSE SUB_HEADER_CONTROLLER "${CMAKE_CURRENT_SOURCE_DIR}/src/webserver/controller/*.h")
+
+file(GLOB_RECURSE SUB_SOURCES_GENERATED "${CMAKE_CURRENT_SOURCE_DIR}/src/generated/*.cpp" )
 file(GLOB_RECURSE SUB_HEADER_GENERATED "${CMAKE_CURRENT_SOURCE_DIR}/src/generated/*.h")
+
+file(GLOB_RECURSE SUB_SOURCES_CUSTOMPARTS "${CMAKE_CURRENT_SOURCE_DIR}/src/webserver/customParts/*.cpp")
+file(GLOB_RECURSE SUB_HEADER_CUSTOMPARTS "${CMAKE_CURRENT_SOURCE_DIR}/src/webserver/customParts/*.h")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
@@ -45,9 +48,11 @@ add_executable(caswaf
     src/PocoMainServer.cpp
 
         ${SUB_SOURCES_GENERATED}
-        ${SUB_SOURCES_CONTROLLER}
         ${SUB_HEADER_CONTROLLER}
+        ${SUB_SOURCES_CONTROLLER}
         ${SUB_HEADER_GENERATED}
+        ${SUB_SOURCES_CUSTOMPARTS}
+        ${SUB_HEADER_CUSTOMPARTS}
 
     #Routing
         src/webserver/Routing.h
@@ -64,6 +69,7 @@ add_executable(caswaf
         src/engine/casTypes.h
         src/engine/part/Part.h
         src/engine/part/StaticPart.h
+        src/engine/part/DataPart.h
 
     #Engine sources
         src/engine/Controller.cpp
@@ -72,6 +78,7 @@ add_executable(caswaf
         src/engine/StaticRecource.cpp
         src/engine/part/Part.cpp
         src/engine/part/StaticPart.cpp
+        src/engine/part/DataPart.cpp
 
         )
 target_link_libraries(caswaf ${CONAN_LIBS})
