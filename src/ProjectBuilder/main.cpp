@@ -38,7 +38,7 @@ int appMain(int argc, char* argv[])
 		("static,s", po::value<fs::path>(&onlyStaticPath), "recreates only the given static file (not implemented yet)")
 		("config-path", po::value<fs::path>(&configPath)->default_value(fs::path("caswaf.conf")), "specify the path of the \"config\" file")
 		;
-
+	
 
 	po::options_description settingsOptions("Settings");
 	settingsOptions.add_options()

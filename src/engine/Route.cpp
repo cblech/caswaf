@@ -12,8 +12,10 @@ Route::Route(std::string path, Resource res):path(path),controller(new StaticCon
 
 Route::~Route()
 {
+	/*
 	if(controller != nullptr)
 		delete controller;
+		*/
 }
 
 std::string Route::getPath()

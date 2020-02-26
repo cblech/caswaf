@@ -53,9 +53,9 @@ RoutingEngine::~RoutingEngine()
 	}
 }
 
-void RoutingEngine::addRoute(Route * r)
+void RoutingEngine::addRoute(const Route& r)
 {
-	routes.push_back(r);
+	routes.push_back(new Route(r));
 }
 
 void RoutingEngine::setError404Controller(Controller* c)

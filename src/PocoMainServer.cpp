@@ -9,8 +9,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Routing.h"
 #include "Resources.h"
+#include "webserver/Routing.h"
+#include <Poco/Logger.h>
 
 using namespace Poco::Net;
 using namespace Poco::Util;
@@ -19,21 +20,25 @@ using namespace std;
 class MyRequestHandler : public HTTPRequestHandler
 {
 public:
+   // MyRequestHandler() = default;
+	
     virtual void handleRequest(HTTPServerRequest& req, HTTPServerResponse& resp)
     {
-        
-    	
         routing.processRequest(req, resp);
+        Poco::Logger& logger = Poco::Logger::get("Requests");
 
-        //resp.send()<<"Hello CMake caswaf";
-        cout << "Requested Paht: " << req.getURI()<<"\n\tresponse Status: "<<resp.getStatus()<<" - "<<resp.getReason()<<endl;
+        logger.information(Poco::format("Requested Paht: %s\n    response Status: %d - %s", req.getURI(), static_cast<int>(resp.getStatus()), resp.getReason()));
+
+        //cout << "Requested Paht: " << req.getURI()<<"\n    response Status: "<<resp.getStatus()<<" - "<<resp.getReason()<<endl;
     }
 
 private:
 
     static Routing routing;
+    //Poco::Logger logger;
     
 };
+
 
 AllResources R;
 Routing MyRequestHandler::routing;
@@ -58,6 +63,8 @@ protected:
         s.start();
         cout << endl << "Server started" << endl;
 
+        //Sleep(10000);
+    	
         waitForTerminationRequest();  // wait for CTRL-C or kill
 
         cout << endl << "Shutting down..." << endl;
@@ -71,6 +78,9 @@ int main(int argc, char** argv)
 {
     cout << "PocoMain" << endl;
     MyServerApp app;
-    return app.run(argc, argv);
+    int i = app.run(argc, argv);
+
+
+    return i;
 }
 

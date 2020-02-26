@@ -16,7 +16,7 @@ public:
 	void processRequest(HTTPServerRequest& req, HTTPServerResponse& resp);
 
 protected:
-	void addRoute(Route * r); 
+	void addRoute(const Route& r); 
 	void setError404Controller(Controller* c);
 
 private:

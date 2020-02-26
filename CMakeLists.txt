@@ -49,8 +49,11 @@ add_executable(caswaf
         ${SUB_HEADER_CONTROLLER}
         ${SUB_HEADER_GENERATED}
 
+    #Routing
+        src/webserver/Routing.h
+        src/webserver/Routing.cpp
+
     #Engine headers
-        src/engine/Routing.h
         src/engine/RoutingEngine.h
         src/engine/Controller.h
         src/engine/Route.h
@@ -63,7 +66,6 @@ add_executable(caswaf
         src/engine/part/StaticPart.h
 
     #Engine sources
-        src/engine/Routing.cpp
         src/engine/Controller.cpp
         src/engine/RoutingEngine.cpp
         src/engine/Route.cpp
