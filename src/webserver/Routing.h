@@ -6,6 +6,6 @@
 class Routing:public RoutingEngine
 {
 public:
-	Routing();
+	void init() override;
 };
 

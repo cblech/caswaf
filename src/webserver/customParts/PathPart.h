@@ -10,7 +10,7 @@ namespace R::Part
 		{
 			std::string path;
 		};
-		void makeHtml(std::ostream& html) override;
-		Part* make() override;
+		//void makeHtml(std::ostream& html, InlineParts inlineParts) override;
+		//Part* make() override;
 	};
 }

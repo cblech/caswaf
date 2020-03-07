@@ -4,8 +4,8 @@
 class DataPart: public Part
 {
 public:
-	std::vector<Part*> getAllParts() override;
+	//std::vector<Part*> getAllParts() override;
 	uint32_t getUniqueIdentifier() override;
 
-	virtual Part* make() = 0;
+	//virtual Part* make() = 0;
 };

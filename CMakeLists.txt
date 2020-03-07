@@ -16,9 +16,11 @@ add_executable(projectBuilder
     src/ProjectBuilder/Compiler.h
     src/ProjectBuilder/HTMLParser.h
     src/ProjectBuilder/log.h
+    src/ProjectBuilder/ProjectStructure.h
     
     src/ProjectBuilder/Compiler.cpp
     src/ProjectBuilder/HTMLParser.cpp
+    src/ProjectBuilder/ProjectStructure.cpp
     
 )
 target_link_libraries(projectBuilder ${CONAN_LIBS})
@@ -67,6 +69,7 @@ add_executable(caswaf
         src/engine/StaticController.h
         src/engine/StaticRecource.h
         src/engine/casTypes.h
+        src/engine/PartStructure.h
         src/engine/part/Part.h
         src/engine/part/StaticPart.h
         src/engine/part/DataPart.h
@@ -76,6 +79,7 @@ add_executable(caswaf
         src/engine/RoutingEngine.cpp
         src/engine/Route.cpp
         src/engine/StaticRecource.cpp
+        src/engine/PartStructure.cpp
         src/engine/part/Part.cpp
         src/engine/part/StaticPart.cpp
         src/engine/part/DataPart.cpp

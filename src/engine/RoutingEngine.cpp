@@ -4,7 +4,11 @@
 
 void RoutingEngine::processRequest(HTTPServerRequest& req, HTTPServerResponse& resp)
 {
-
+	if(routes.size()==0)
+	{
+		init();
+	}
+	
 	Route* route = matchPathToRoute(req.getURI());
 
 

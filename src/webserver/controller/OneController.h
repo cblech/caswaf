@@ -2,6 +2,7 @@
 #include "Controller.h"
 #include "../generated/html.generated.h"
 #include "../engine/Resources.h"
+#include "PartStructure.h"
 #include "webserver/customParts/PathPart.h"
 #include "webserver/customParts/UsernamePart.h"
 
@@ -12,22 +13,30 @@ public:
 	//virtual CasResponse makeHTML(CasRequest request) override;
 	OneController()
 	{
-		rootPart = R::Part::PartApp()
-			.addSubpart(R::Part::PartApp::PartPluginPoints::content, R::Part::Partone()
-				.addSubpart(R::Part::Partone::PartPluginPoints::p1, R::Part::Partroot().make())
-				.addSubpart(R::Part::Partone::PartPluginPoints::p2, R::Part::PathPart().make())
+		/*
+		rootPart = R::Part::App()
+			.addSubpart(R::PluginPoints::content, R::Part::one()
+				.addSubpart(R::PluginPoints::p1, R::Part::root().make())
 				.make())
-			.addSubpart(R::Part::PartApp::PartPluginPoints::username, R::Part::UsernamePart().make())
-			.make();
+			.addSubpart(R::PluginPoints::username, R::Part::UsernamePart().make());
+			*/
+		rootStructure = PartStructure(R::Part::App())
+			.add(R::PluginPoints::content, R::Part::one());
+
+		
 	}
 
 
 	void onRequest(CasRequest& request, HTTPServerResponse& response) override
 	{
-		R::Part::PathPart::Data d{ request.path};
+		PartStructure cp = rootStructure;
+		auto p = &R::Part::UsernamePart(request.path);
+		cp.add(R::PluginPoints::username, static_cast<Part*>(p));
 		
-		
-		
-		handlePartRequest(request,response);
+		cp.onRequest(request, response);
 	}
+private:
+	//R::Part::App rootPart;
+	PartStructure rootStructure;
+	
 };

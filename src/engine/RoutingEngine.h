@@ -12,7 +12,7 @@ class RoutingEngine
 public:
 	~RoutingEngine();
 
-
+	virtual void init() = 0;
 	void processRequest(HTTPServerRequest& req, HTTPServerResponse& resp);
 
 protected:

@@ -1,13 +1,29 @@
 #include "UsernamePart.h"
 
-void R::Part::UsernamePart::makeHtml(std::ostream& html)
+
+R::Part::UsernamePart::UsernamePart(std::string name):name(name),f(Fragment(name))
 {
-	html << "cblech";
 }
 
-Part* R::Part::UsernamePart::make()
+/*
+void R::Part::UsernamePart::makeHtml(std::ostream& html, InlineParts inlineParts)
 {
-	return new UsernamePart(*this);
+	html << name;
 }
+*/
+
+//Part* R::Part::UsernamePart::make()
+//{
+//	return new UsernamePart(*this);
+//}
+
+Part::Fragment* R::Part::UsernamePart::getFragment(int index)
+{
+	if (index != 0)
+		return &Part::Fragment::nullFragment;
+	
+	return &f;
+}
+
 
 

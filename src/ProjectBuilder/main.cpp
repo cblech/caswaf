@@ -6,6 +6,8 @@
 #include "HTMLParser.h"
 #include <iostream>
 
+#include "ProjectStructure.h"
+
 auto VERSION_STRING = "0.0.1";
 
 using namespace std;
@@ -31,11 +33,11 @@ int appMain(int argc, char* argv[])
 	genericOptions.add_options()
 		("help,h", "prints this help message and exits")
 		("version,v", "prints the version string and exits")
-		("parts-only", "recreates only the part files")
-		("statics-only", "recreates only the static files")
-		("config-only", "recreates only the config files")
-		("part,p", po::value<fs::path>(&onlyPartPath), "recreates only the given part (not implemented yet)")
-		("static,s", po::value<fs::path>(&onlyStaticPath), "recreates only the given static file (not implemented yet)")
+		//("parts-only", "recreates only the part files")
+		//("statics-only", "recreates only the static files")
+		//("config-only", "recreates only the config files")
+		//("part,p", po::value<fs::path>(&onlyPartPath), "recreates only the given part (not implemented yet)")
+		//("static,s", po::value<fs::path>(&onlyStaticPath), "recreates only the given static file (not implemented yet)")
 		("config-path", po::value<fs::path>(&configPath)->default_value(fs::path("caswaf.conf")), "specify the path of the \"config\" file")
 		;
 	
@@ -90,6 +92,10 @@ int appMain(int argc, char* argv[])
 	{
 		Compiler c(resourcesPath, generatedPath);
 
+		c.actionCompileHTML();
+		c.actionCompileStatic();
+		
+		/*
 		IF_OPTION("parts-only")
 		{
 			info << "compiling parts only";
@@ -122,6 +128,7 @@ int appMain(int argc, char* argv[])
 			c.actionCompileStatic();
 			c.actionCompileConfig();
 		}
+		*/
 	}
 	catch (std::exception e)
 	{
@@ -166,7 +173,10 @@ int appMain(int argc, char* argv[])
 
 int main(int argc, char* argv[])
 {
+	ProjectStructure ps;
+
+	
 	auto r = appMain(argc, argv);
-	//system("pause");
+	system("pause");
 	return r;
 }

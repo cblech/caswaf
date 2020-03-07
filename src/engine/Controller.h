@@ -12,8 +12,15 @@ class Controller
 public:
 	virtual void onRequest(CasRequest& request, HTTPServerResponse& response);
 
-	virtual void handlePartRequest(CasRequest& request, HTTPServerResponse& response);
-
+	//virtual void handlePartRequest(CasRequest& request, HTTPServerResponse& response);
+	/*
+	template<typename T>
+	struct PartStructure
+	{
+		T* part;
+		std::map<int, PartStructure> children;
+	};*/
+	
 protected:
-	Part * rootPart = nullptr;
+	//Part * rootPart = nullptr;
 };

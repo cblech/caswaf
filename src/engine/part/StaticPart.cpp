@@ -5,31 +5,34 @@
 //{
 //}
 
+/*
 StaticPart StaticPart::addSubpart(int connectionPoint, Part* addedPart)
 {
 	containingParts.try_emplace(connectionPoint, addedPart);
 	return *this;
-}
+}*/
 
-void StaticPart::makeHtml(std::ostream& html)
+/*
+void StaticPart::makeHtml(std::ostream& html, InlineParts inlineParts)
 {
-	for (auto token : tokenList)
+	for (auto token : fragmentList)
 	{
 		switch (token.type) {
 		case Token::html:
-			html << token.contens;
+			html << token.content;
 			break;
 		case Token::part:
-			if (containingParts.find(token.partID) != containingParts.end())
+			if (inlineParts.find(token.pluginPoint) != inlineParts.end())
 			{
-				containingParts.at(token.partID)->makeHtml(html);
+				inlineParts.at(token.pluginPoint)->makeHtml(html);
 			}
 			break;
 		}
 	}
 
 }
-
+*/
+/*
 std::vector<Part*> StaticPart::getAllParts()
 {
 	std::vector<Part*> retVal;
@@ -42,8 +45,21 @@ std::vector<Part*> StaticPart::getAllParts()
 	retVal.push_back(this);
 	return retVal;
 }
+*/
 
 uint32_t StaticPart::getUniqueIdentifier()
 {
 	return uint32_t(partId) << 16;
+}
+
+Part::Fragment* StaticPart::getFragment(int index)
+{
+	try
+	{
+		return &fragmentList.at(index);
+	}
+	catch (...)
+	{
+		return &Part::Fragment::nullFragment;
+	}
 }

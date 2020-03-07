@@ -6,7 +6,15 @@ namespace R::Part
 	class UsernamePart :public DataPart
 	{
 	public:
-		void makeHtml(std::ostream& html) override;
-		Part* make() override;
+		UsernamePart(std::string name);
+		
+		//void makeHtml(std::ostream& html, InlineParts inlineParts) override;
+		//Part* make() override;
+
+		Fragment* getFragment(int index) override;
+	private:
+		std::string name;
+		Fragment f;
 	};
 }
+

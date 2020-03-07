@@ -1,6 +1,7 @@
 [requires]
 poco/1.9.4
 boost/1.71.0
+sqlite3/3.31.0
 
 [generators]
 cmake

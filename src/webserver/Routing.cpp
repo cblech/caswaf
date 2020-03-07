@@ -4,8 +4,10 @@
 #include "controller/RootController.h"
 #include "Resources.h"
 
-Routing::Routing()
+void Routing::init()
 {
+    std::cout << "INIT" << std::endl;
+	
     setError404Controller(new Error404Controller());
 
     //static Routes
@@ -21,5 +23,6 @@ Routing::Routing()
     //html Routes
     addRoute( Route("/", new RootController()));
     addRoute( Route("/one", new OneController()));
+    addRoute( Route("/one/*", new OneController()));
 
 }

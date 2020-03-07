@@ -24,12 +24,26 @@ public:
 	
     virtual void handleRequest(HTTPServerRequest& req, HTTPServerResponse& resp)
     {
+    	try
+    	{
+    		
+    	
         routing.processRequest(req, resp);
         Poco::Logger& logger = Poco::Logger::get("Requests");
 
         logger.information(Poco::format("Requested Paht: %s\n    response Status: %d - %s", req.getURI(), static_cast<int>(resp.getStatus()), resp.getReason()));
 
         //cout << "Requested Paht: " << req.getURI()<<"\n    response Status: "<<resp.getStatus()<<" - "<<resp.getReason()<<endl;
+
+    	}
+    	catch(std::exception e)
+    	{
+            cout << "Error: " << e.what() << endl;
+    	}
+    	catch(...)
+    	{
+            cout << "Generic Error" << endl;
+    	}
     }
 
 private:
